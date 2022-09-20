@@ -6,7 +6,7 @@ export const ProfileOptions = () => {
   return (
     <ProfileContainer>
         <Avatar/>
-        <h4>lucho</h4>
+        <h4>LUCHO LOPEZ</h4>
         <ArrowDropDown/>
     </ProfileContainer>
   )
