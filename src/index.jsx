@@ -6,7 +6,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
 import store from './app/store';
 
-import { Player } from './components/pages/Player';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -1,17 +1,14 @@
 import { ArrowDropDown } from "@mui/icons-material"
 import { Avatar } from "@mui/material"
-import { useSelector } from "react-redux"
 import styled from "styled-components"
-import { selectUser } from "../../features/UserSlice";
 
 export const ProfileOptions = () => {
-  const user = useSelector(selectUser);
-  const {display_name, images, id} = user.user;
+
 
   return (
     <ProfileContainer>
-      <Avatar src={ images[0].url } alt={ id }/>
-      <h4>{ display_name }</h4>
+      <Avatar/>
+      <h4>LUCHO LOPEZ</h4>
       <ArrowDropDown/>
     </ProfileContainer>
   )

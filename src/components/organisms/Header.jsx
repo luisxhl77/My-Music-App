@@ -1,27 +1,22 @@
-import { Route, Routes } from "react-router-dom"
 import styled from "styled-components"
-import { DeploymentArrow } from "../molecules/DeploymentArrow"
-import { ProfileOptions } from "../molecules/ProfileOptions"
-import { Seeker } from "../molecules/Seeker"
+import { DeploymentArrow } from "../molecules/DeploymentArrow";
+import { ProfileOptions } from "../molecules/ProfileOptions";
 
 export const Header = () => {
   return (
     <HeaderContainer>
       <HeaderLeft>
         <DeploymentArrow/>
-        <Routes>
-          <Route path="/Shearch" element={ <Seeker/> }/>
-        </Routes>
       </HeaderLeft>
       <ProfileOptions/>
     </HeaderContainer>
   )
 }
 
+
 const HeaderContainer = styled.div`
   position: fixed;
-  width: 87.5%;
-  flex: 1;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { LoginButton } from "../atoms/buttons";
-import { loginURL } from "../../SpotifyLogin";
+import { LoginButton } from "../../atoms/buttons";
+import { loginURL } from "../../../SpotifyLogin";
 
 export const Login = () => {
   return (
     <LoginContainer>
-      <img src="https://1000logos.net/wp-content/uploads/2017/08/Spotify-symbol.jpg" alt="logo" />
+      <img src="../../../../public/MyMusicApp.PNG" alt="logo" />
       <LoginButton href={loginURL}>Iniciar sesion</LoginButton>
     </LoginContainer>
   )

@@ -12,14 +12,14 @@ export const SiderbarChoice = ({title,Icon}) => {
 };
 
 //estyle
-const ChoiceOptions = styled.div`
+const ChoiceOptions = styled.li`
     display: flex;
     align-items: center;
     color: #b2b2b2;
     height: 41px;
     transition: 300ms color ease-in;
     cursor: pointer;
-    padding: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 5px;
     &:hover{
         color: #fff;
     }

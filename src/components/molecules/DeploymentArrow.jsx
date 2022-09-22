@@ -11,6 +11,7 @@ export const DeploymentArrow = () => {
     )
 }
 const ArrowContainer = styled.div`
+    margin-left: 30px;
     width: 127px;
     display: flex;
     justify-content: space-evenly;

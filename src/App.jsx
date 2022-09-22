@@ -1,13 +1,12 @@
-import { Player } from "./components/pages/Player";
-import { Login } from "./components/pages/Login";
-
+import { Login } from "./components/pages/login/Login";
+import { Player } from "./components/pages/player/Player";
 import { useEffect } from "react";
-import { getTokenFromURL } from "./spotifyLogin";
 import { useDispatch, useSelector } from "react-redux";
-import {  selectUser, SET_USER } from "./features/UserSlice";
 import SpotifyWebApi from "spotify-web-api-js";
-import { selectToken, SET_TOKEN } from "./features/TokenSlice";
 import { SET_PLAYLIST } from "./features/PlaylistSlice";
+import { selectToken, SET_TOKEN } from "./features/TokenSlice";
+import { selectUser, SET_USER } from "./features/UserSlice";
+import { getTokenFromURL } from "./SpotifyLogin";
 
 const spotify = new SpotifyWebApi();
 
