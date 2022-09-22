@@ -13,12 +13,12 @@ export const Footer = () => {
     )
 }
 const FooterContainer = styled.div`
-    position: fixed;
     display: flex;
     justify-content: space-between;
+    position: fixed;
     bottom: 0;
     height: 90px;
-    width: 100vw;
+    width: 100%;
     background-color: #181818;
     color: #fff;
     & .MuiSlider-thumb{

@@ -13,8 +13,8 @@ export const Player = () => {
           <Header/>
           <Body/>
         </MainContainer>
+        <Footer/>
       </SpotifyBody>
-      <Footer/>
     </>
   )
 }

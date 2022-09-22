@@ -1,8 +1,8 @@
-import { useEffect } from "react";
 import { Player } from "./components/pages/Player";
 import { Login } from "./components/pages/Login";
-import { getTokenFromURL } from "./spotifyLogin";
 
+import { useEffect } from "react";
+import { getTokenFromURL } from "./spotifyLogin";
 import { useDispatch, useSelector } from "react-redux";
 import {  selectUser, SET_USER } from "./features/UserSlice";
 import SpotifyWebApi from "spotify-web-api-js";
@@ -26,6 +26,7 @@ export function App() {
             spotify.getMe().then( user => dispatch(SET_USER({user})))
             //console.log("token => ",_token)
             spotify.getPlaylist("6IkYKhWOcocPCJffDilA9h").then(playlist => dispatch(SET_PLAYLIST(playlist)))
+            spotify.getArtistAlbums ("6IkYKhWOcocPCJffDilA9h").then(albums => console.log(albums))
         }
 
     },[dispatch])

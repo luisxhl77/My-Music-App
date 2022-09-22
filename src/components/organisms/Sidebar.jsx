@@ -49,7 +49,7 @@ export const Sidebar = () => {
 };
 
 //estyle
-export const SidebarContainer = styled.div`
+const SidebarContainer = styled.div`
 
   font-size: 0.875rem;
   flex: 0.1;

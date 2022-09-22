@@ -1,9 +1,10 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const SongRow = ({track}) => {
+    console.log(track.length)
   return (
     <SongRowContainer>
-        <img src={track.album.images[0].url} alt="album" />
+        <img src={track.album.images[0].url} alt="album"/>
         <SongInfo>
             <h4>{track.name}</h4>
             <p>
@@ -20,6 +21,7 @@ export const SongRow = ({track}) => {
 }
 
 const SongRowContainer = styled.div`
+    padding: 10px 0px;
     display: flex;
     margin-left: 25px;
     align-items: center;

@@ -9,7 +9,7 @@ export const Body = () => {
   return (
     <BodyContainer>
       <Info>
-        <img src={playlist?.images[1]?.url} alt="" />
+        <img src={playlist?.images[0]?.url} alt="" />
         <InfoText>
           <h4>PLAYLIST</h4>
           <p>{playlist?.name}</p>
@@ -23,35 +23,34 @@ export const Body = () => {
         </Icons>
         {
           playlist?.tracks?.items.map((item, index) => (
-
             <SongRow track={item.track} key={index} />
           ))
         }
       </Songs>
-      <h1>Body</h1>
     </BodyContainer>
   )
 }
 
 const BodyContainer = styled.div`
   flex: 1;
-  background: linear-gradient(#340034, #000);
+  background: linear-gradient( #466d82 1%,#000 62%);
   color: #fff;
   height: 100vh;
-  padding: 50px 30px;
+  padding: 110px 0px 70px;
   overflow-y: overlay;
   &::-webkit-scrollbar{
     display: none;
   }
 `
 const Info = styled.div`
+margin: 0px 0px 0px 20px;
   display: flex;
   align-items: flex-end;
   padding: 10px;
   & img{
     width: 20vw;
-    margin: 0 20px;
-    box-shadow: 0 4px 60px #000;
+    margin: 0px 25px 0px -15px;
+    box-shadow: 0 2px 30px #000;
   }
 `
 const InfoText = styled.div`
@@ -61,7 +60,8 @@ const InfoText = styled.div`
   }
 `;
 const Songs = styled.div`
-  margin: 20px 10px;
+  background: linear-gradient( #00000029 1%,#000 17%);
+  margin: 20px 0px;
 `;
 const Icons = styled.div`
 

@@ -19,12 +19,13 @@ export const Header = () => {
 }
 
 const HeaderContainer = styled.div`
+  position: fixed;
+  width: 87.5%;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 65px;
-  background-color: #131313;
   color: white;
 `
 const HeaderLeft = styled.div`
