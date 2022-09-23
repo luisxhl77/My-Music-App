@@ -1,4 +1,5 @@
 import { AddBox, Favorite, Home, LibraryMusic, Menu, Search } from "@mui/icons-material"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { Images } from "../../atoms/images/images"
 import { Line } from "../../atoms/line/line"
@@ -8,8 +9,10 @@ export const Sidebar = () => {
   
   return (
     <SidebarContainer>
-      <Images src="https://1000logos.net/wp-content/uploads/2017/08/Spotify-symbol.jpg" alt="logo"/>
-      <SiderbarChoice title="Inicio" Icon={Home} />
+      <Images src="../../../public/MyMusicApp.png" alt="logo"/>
+      <Link to="/Playlist">
+        <SiderbarChoice title="Inicio" Icon={Home} />
+      </Link>
       <SiderbarChoice title="Buscar" Icon={Search} />
       <SiderbarChoice title="Tu Biblioteca" Icon={LibraryMusic} />
       <Line/>

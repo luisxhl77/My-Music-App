@@ -22,6 +22,7 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   height: 65px;
   color: white;
+  background-color: #181818;
 `
 const HeaderLeft = styled.div`
   display: flex;

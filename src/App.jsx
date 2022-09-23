@@ -14,6 +14,7 @@ export function App() {
     const token = useSelector(selectToken)
     const user = useSelector(selectUser)
     const dispatch = useDispatch()
+    
 
     useEffect(()=>{
         const data = getTokenFromURL();
@@ -25,7 +26,11 @@ export function App() {
             spotify.getMe().then( user => dispatch(SET_USER({user})))
             //console.log("token => ",_token)
             spotify.getPlaylist("6IkYKhWOcocPCJffDilA9h").then(playlist => dispatch(SET_PLAYLIST(playlist)))
-            spotify.getArtistAlbums ("6IkYKhWOcocPCJffDilA9h").then(albums => console.log(albums))
+            //spotify.getMyTopTracks().then(savedTracks => console.log(savedTracks))
+            //spotify.getMyRecentlyPlayedTracks().then(savedTracks => console.log(savedTracks))
+            //spotify.getMySavedTracks().then(savedTracks => console.log(savedTracks))
+            //spotify.getUserPlaylists().then(userPlaylists => console.log(userPlaylists))
+            //spotify.getMySavedAlbums().then(savedTracks => console.log(savedTracks))
         }
 
     },[dispatch])

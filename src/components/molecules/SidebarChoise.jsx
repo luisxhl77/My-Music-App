@@ -11,7 +11,6 @@ export const SiderbarChoice = ({title,Icon}) => {
     )
 };
 
-//estyle
 const ChoiceOptions = styled.li`
     display: flex;
     align-items: center;
