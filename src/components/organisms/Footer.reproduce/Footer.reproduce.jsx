@@ -13,7 +13,7 @@ export const FooterReproduce = () => {
   )
 }
 
-const Footer = styled.div`
+const Footer = styled.footer`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

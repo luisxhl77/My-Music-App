@@ -2,12 +2,16 @@ const endpoint = 'https://accounts.spotify.com/authorize';
 const client_id = '4214432a3f4f407aa2e3667676cb1edc';
 const redirect_uri = 'http://127.0.0.1:5173/';
 const scope = [
+  //Spotify Connect
   "user-read-playback-state",
   "user-modify-playback-state",
   "user-read-currently-playing",
-  "user-read-recently-played",
+
+  //Listening History
+  "user-read-playback-position",
   "user-top-read",
-  "playlist-read-private",
+  "user-read-recently-played",
+  //Playlists
   "playlist-read-private",
   "playlist-read-collaborative",
   "playlist-modify-private",
@@ -15,6 +19,7 @@ const scope = [
   //library
   "user-library-modify",
   "user-library-read",
+  //User
   "user-read-email",
   "user-read-private"
 ]

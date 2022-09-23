@@ -1,9 +1,8 @@
 import { Avatar } from "@mui/material";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { selectUser } from "../../../features/UserSlice";
-import { BodyContainer } from "../Body";
-
+import { selectUser } from "../../../store/slices/UserSlice";
+import { BodyContainer } from "../body/Body";
 export const Profile = () => {
   const user = useSelector(selectUser);
   console.log(user);

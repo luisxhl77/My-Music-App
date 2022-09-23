@@ -2,7 +2,7 @@ import { ArrowDropDown } from "@mui/icons-material"
 import { Avatar } from "@mui/material"
 import styled from "styled-components"
 import { useSelector } from "react-redux"
-import { selectUser } from "../../features/UserSlice";
+import { selectUser } from "../../store/slices/UserSlice";
 import { Link } from "react-router-dom";
 
 export const ProfileOptions = () => {

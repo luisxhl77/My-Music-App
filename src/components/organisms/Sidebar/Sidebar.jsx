@@ -9,20 +9,37 @@ export const Sidebar = () => {
   
   return (
     <SidebarContainer>
-      <Images src="../../../public/MyMusicApp.png" alt="logo"/>
-      <Link to="/Playlist">
-        <SiderbarChoice title="Inicio" Icon={Home} />
+      <Link to="/Home">
+        <Images src="../../../public/MyMusicApp.png" alt="logo"/>
       </Link>
-      <SiderbarChoice title="Buscar" Icon={Search} />
-      <SiderbarChoice title="Tu Biblioteca" Icon={LibraryMusic} />
+
+      <Link to="/Home">
+        <SiderbarChoice title="Inicio" Icon={ Home } />
+      </Link>
+
+      <Link to="/">
+        <SiderbarChoice title="Buscar" Icon={ Search } />
+      </Link>
+
+      <Link to="/Playlist">
+        <SiderbarChoice title="Tu Biblioteca" Icon={ LibraryMusic } />
+      </Link>
+
       <Line/>
-      <SiderbarChoice title="Crear Playlist" Icon={AddBox} />
-      <SiderbarChoice title="Tus me gusta" Icon={Favorite} />
+
+      <Link to="/">
+        <SiderbarChoice title="Crear Playlist" Icon={ AddBox } />
+      </Link>
+
+      <Link to="/Playlist">
+        <SiderbarChoice title="Tus me gusta" Icon={ Favorite } />
+      </Link>
+
     </SidebarContainer>
   )
 }
 
-const SidebarContainer = styled.div`
+const SidebarContainer = styled.nav`
   position: fixed;
   width: 45px;
   font-size: 0.875rem;
