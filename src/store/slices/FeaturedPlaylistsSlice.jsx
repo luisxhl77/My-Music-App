@@ -13,5 +13,5 @@ export const featuredPlaylistsSlice = createSlice({
 });
 
 export const { SET_FEATUREDPLAYLISTS } = featuredPlaylistsSlice.actions;
-export const selectPlaylist = state => state.featuredPlaylists.featuredPlaylists;
+export const selectFeaturedPlayLists = state => state.featuredPlaylists.featuredPlaylists;
 export default featuredPlaylistsSlice.reducer;

@@ -13,5 +13,5 @@ export const categoriesSlice = createSlice({
 });
 
 export const { SET_CATEGORIES } = categoriesSlice.actions;
-export const selectPlaylist = state => state.categories.categories;
+export const selectCategories = state => state.categories.categories;
 export default categoriesSlice.reducer;

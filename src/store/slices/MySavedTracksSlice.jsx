@@ -13,5 +13,5 @@ export const mySavedTracksSlice = createSlice({
 });
 
 export const { SET_MYSAVEDTRACKS } = mySavedTracksSlice.actions;
-export const selectPlaylist = state => state.mySavedTracks.mySavedTracks;
+export const selectMySavedTracks = state => state.mySavedTracks.mySavedTracks;
 export default mySavedTracksSlice.reducer;

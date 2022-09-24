@@ -13,5 +13,5 @@ export const newReleasesSlices = createSlice({
 });
 
 export const { SET_NEWRELEASES } = newReleasesSlices.actions;
-export const selectPlaylist = state => state.newReleases.newReleases;
+export const selectNewReleases = state => state.newReleases.newReleases;
 export default newReleasesSlices.reducer;
