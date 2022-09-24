@@ -23,6 +23,7 @@ const HeaderContainer = styled.header`
   height: 65px;
   color: white;
   background-color: #181818;
+  z-index: 1;
 `
 const HeaderLeft = styled.div`
   display: flex;

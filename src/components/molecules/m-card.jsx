@@ -18,9 +18,9 @@ export const Card = ({name, description, image, type}) => {
 const CardContainer = styled.div`
     display: inline-block;
     padding: 20px 10px;
-    height: 28vh;
-    min-width: 16vh;
-    max-width: 17vh;
+    height: 260px;
+    min-width: 100px;
+    max-width: 170px;
     margin: 20px;
     background-color: #171717;
     border-radius: 10px;
@@ -35,6 +35,7 @@ const CardContainer = styled.div`
         margin: 15px 0px 5px;
     }
     & p{
+        width: 100%;
         overflow: hidden;
         white-space: wrap;
         text-overflow: ellipsis;

@@ -6,7 +6,7 @@ import { BodyContainer } from "../body/Body";
 export const Profile = () => {
   const user = useSelector(selectUser);
   console.log(user);
-  const {followers, display_name, images, id} = user.user;
+  const {followers, display_name, images, id, email} = user.user;
   return (
     <BodyContainer>
       <ProfileContainer>
@@ -15,6 +15,8 @@ export const Profile = () => {
         <input type="text" name="" id="name" placeholder={display_name}/>
         <label htmlFor="followers">seguidores</label>
         <input type="text" name="" id="followers" placeholder={followers.total}/>
+        <label htmlFor="followers">E-mail</label>
+        <input type="text" name="" id="followers" placeholder={email}/>
       </ProfileContainer>
     </BodyContainer>
   )

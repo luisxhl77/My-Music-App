@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components"
+import { selectCategories } from "../../../store/slices/CategoriesSlice";
 import { selectFeaturedPlayLists } from "../../../store/slices/FeaturedPlaylistsSlice";
 import { selectNewReleases } from "../../../store/slices/NewReleasesSlice";
 import { selectUserPlaylists } from "../../../store/slices/UserPlaylistsSlice";
@@ -9,6 +10,7 @@ export const Home = () => {
   const userPlaylists = useSelector(selectUserPlaylists);
   const featuredPlayLists = useSelector(selectFeaturedPlayLists);
   const newReleases = useSelector(selectNewReleases);
+  const categories = useSelector(selectCategories);
 
   return (
     <HomeContainer>
@@ -34,6 +36,14 @@ export const Home = () => {
           ))
         }
       </div>
+      <h1>CATEGORIAS</h1>
+      <div>
+        {
+          categories?.categories?.items?.map((item,index) => (
+            <Card  name={item.name} image={item.icons[0].url} type={item?.name} key={index}/>
+          ))
+        }
+      </div>
 
     </HomeContainer>
   )
@@ -43,10 +53,9 @@ const HomeContainer = styled.main`
   display: flex;
   flex-direction: column;
   background: linear-gradient( #4c4682 1%,#000 72%);
-  margin-top: 6.7vh;
   color: #fff;
-  height: 80vh;
-  padding: 60px 9% 0px 10%;
+  height: 70vh;
+  padding: 15vh 7% 15vh 10%;
   overflow: auto;
   &::-webkit-scrollbar{
     background-color: #000000a0;
@@ -67,6 +76,7 @@ const HomeContainer = styled.main`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     width: auto;
   }
 `

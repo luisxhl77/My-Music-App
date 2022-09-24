@@ -6,7 +6,6 @@ const scope = [
   "user-read-playback-state",
   "user-modify-playback-state",
   "user-read-currently-playing",
-
   //Listening History
   "user-read-playback-position",
   "user-top-read",
