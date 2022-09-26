@@ -1,0 +1,59 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.footer-center{
+    width: 40%;
+    min-width: 300px;
+    max-width: 100%;
+    @include flexbox(column, none, none, center, center);
+    color: $text-2;
+    &__options-Play{
+        padding: 1px 0px;
+        min-width: 40%;
+        @include flexbox(none,none,none, space-evenly, center);
+    }
+    &__iconPlayer{
+        font-size: 29px;
+        width: 100px;
+        cursor: pointer;
+        &:hover{
+            color: #fff;
+            transition: 300ms color ease-in;
+        }
+        &:active{
+            color: #b2b2b2;
+            transition: none;
+        }
+    }
+    &__btnPlay{
+        font-size: 42px;
+        cursor: pointer;
+    }
+    &__time{
+        padding-top: 12px;
+        max-width: 300px;
+        min-width: 100%;
+        @include flexbox(none, none, none, center, center);
+        & p{
+            font-size: 1.2vh;
+            margin: 0px 7px;
+        }
+    }
+    &__time-bar{
+        width: 70%;
+        height: 14%;
+        color: #fff;
+        & .MuiSlider-thumb{
+            height: 0px;       
+            width: 0px;
+            color: #fff;
+        }
+        &:hover{
+            color: #00ff00;
+            & .MuiSlider-thumb{
+                height: 10px;
+                width: 10px;
+            }
+        }
+    }
+}

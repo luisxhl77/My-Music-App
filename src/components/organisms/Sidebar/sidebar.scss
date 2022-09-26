@@ -1,0 +1,26 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.nav{
+  width: 45px;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  z-index: 1;
+  left: 0;
+  font-size: 0.9rem;
+  background-color: $backgroud-1;
+  @include flexbox(column, none, none, none, none);
+  &__line{
+    border: 0.1px solid $text-2;
+    width: 80%;
+    margin: 20px auto; 
+  }
+  &__logo{
+    width: 123px;
+    margin: 15px 0px 10px;
+  }
+  &:hover{
+    width: 200px;
+  }
+}

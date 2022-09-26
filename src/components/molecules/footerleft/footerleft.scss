@@ -1,0 +1,33 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.footerLeft{
+    width: 30%;
+    min-width: 280px;
+    @include flexbox(none, none, none, none, center);
+    color: $text-2;
+    &__image{
+        width: 56px;
+        margin: 0px 20px 0px 16px;
+        border-radius: 3px;
+    }
+    &__info-song{
+        margin-right: 17px;
+        & h4{
+            font-size: 1.3vh;
+            color: $text-one;
+            margin: 3px 0px 5px;
+        }
+        & p{
+            font-size: 1.1vh;
+        }
+    }
+    &__icon{
+        margin: auto 8px;
+        cursor: pointer;
+        &:hover{
+            transition: 300ms color ease-in;
+            color: #fff;
+        }
+    }
+}

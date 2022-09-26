@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
-import styled from "styled-components"
 import { selectCategories } from "../../../store/slices/CategoriesSlice";
 import { selectFeaturedPlayLists } from "../../../store/slices/FeaturedPlaylistsSlice";
 import { selectNewReleases } from "../../../store/slices/NewReleasesSlice";
 import { selectUserPlaylists } from "../../../store/slices/UserPlaylistsSlice";
-import { Card } from "../../molecules/m-card"
+import { Card } from "../../molecules/card/Card";
+import './home.scss';
 
 export const Home = () => {
   const userPlaylists = useSelector(selectUserPlaylists);
@@ -13,70 +13,38 @@ export const Home = () => {
   const categories = useSelector(selectCategories);
 
   return (
-    <HomeContainer>
-      <h1>PLAYLIST FAVORITAS</h1>
-      <div>
+    <main className="main">
+      <h1 className="main__recommended-title">PLAYLIST FAVORITAS</h1>
+      <section className="main__recommended-list">
         { userPlaylists?.items.map((item,index) => (
           <Card name={item.name} description={item.description} image={item.images[0].url} type={item.type} key={index} />
           ))
         }
-      </div>
-      <h1>Listas de reproducción destacadas</h1>
-      <div>
+      </section>
+      <h1 className="main__recommended-title">Listas de reproducción destacadas</h1>
+      <section className="main__recommended-list">
         { featuredPlayLists?.playlists?.items.map((item,index) => (
           <Card name={item.name} description={item.description} image={item.images[0].url} type={item.type} key={index} />
           ))
         }
-      </div>
-      <h1>nuevos lanzamientos</h1>
-      <div>
+      </section>
+      <h1 className="main__recommended-title">nuevos lanzamientos</h1>
+      <section className="main__recommended-list">
         {
           newReleases?.albums?.items?.map((item,index) => (
             <Card name={item.name} description={item.artists[0].name} image={item.images[0].url} type={item.album_type} key={index}/>
           ))
         }
-      </div>
-      <h1>CATEGORIAS</h1>
-      <div>
+      </section>
+      <h1 className="main__recommended-title">CATEGORIAS</h1>
+      <section className="main__recommended-list">
         {
           categories?.categories?.items?.map((item,index) => (
             <Card  name={item.name} image={item.icons[0].url} type={item?.name} key={index}/>
           ))
         }
-      </div>
+      </section>
 
-    </HomeContainer>
+    </main>
   )
 }
-
-const HomeContainer = styled.main`
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient( #4c4682 1%,#000 72%);
-  color: #fff;
-  height: 70vh;
-  padding: 15vh 7% 15vh 10%;
-  overflow: auto;
-  &::-webkit-scrollbar{
-    background-color: #000000a0;
-    width: 1vh;
-  }
-  &::-webkit-scrollbar-thumb{            /*Diseño del scroll*/
-    background-color: rgb(255, 255, 255);
-  }
-  &::-webkit-scrollbar-thumb:hover{      /*Reaccion del scroll*/
-    background-color: rgb(139, 248, 50);
-  }
-  & h1{
-    text-align: center;
-    text-shadow: 4px 10px 10px black;
-    margin: 50px 0px 10px 20px;
-  }
-  & div{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-  }
-`

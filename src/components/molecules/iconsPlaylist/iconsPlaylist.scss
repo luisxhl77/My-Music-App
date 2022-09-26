@@ -1,0 +1,21 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.iconsPlaylist{
+    @include flexbox(none, none, none, none, center);
+    padding: 20px 10% 0px 10%;
+    & .play-icon{
+        color: #00ff22;
+        font-size: 70px;
+        margin: 0px 10px 0px 20px;
+        cursor: pointer;
+    }
+    & .favorite-icon{
+        font-size: 40px;
+        margin: 0px 10px 0px 0px;
+        cursor: pointer;
+        &:hover{
+            color: #a1a1a1;
+        }
+    }
+}

@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom"
 import styled from "styled-components"
-import { Body } from "../../organisms/body/Body"
 import { FooterReproduce } from "../../organisms/Footer.reproduce/Footer.reproduce"
-import { Header } from "../../organisms/Header"
+import { Header } from "../../organisms/header/Header"
 import { Home } from "../../organisms/home/Home"
+import { Playlist } from "../../organisms/playlist/Playlist"
 import { Profile } from "../../organisms/profile/Profile"
 import { Sidebar } from "../../organisms/Sidebar/Sidebar"
 
@@ -15,7 +15,7 @@ export const Player = () => {
       <Routes>
         <Route path="/" element={ <Home/> }/>
         <Route path="/Home" element={ <Home/> }/>
-        <Route path="/Playlist" element={ <Body/> }/>
+        <Route path="/Playlist" element={ <Playlist/> }/>
         <Route path="/Profile" element={ <Profile/> }/>
       </Routes>
       <FooterReproduce/>

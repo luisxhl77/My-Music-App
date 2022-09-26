@@ -1,0 +1,23 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.profile{
+    @include flexbox(column, none, none, flex-start, center);
+    height: 80vh;
+    width: 100%;
+    padding: 2vh 0% 2vh 0%;
+    margin: 7vh 0vh 9vh 0vh;
+    border-radius: 10px;
+    background: linear-gradient( #42a550 1%,#000 72%);
+    color: #ffffff;
+    & .profile__image{
+        width: 300px;
+        height: 300px;
+        margin: 30px 0px;
+    }
+    &__name-data{
+        margin: 25px 0px 10px;
+    }
+    &__data{
+    }
+}

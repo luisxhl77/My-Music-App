@@ -1,0 +1,11 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+#root{
+    height: 100vh;
+    background-color: $backgroud-1;
+    @include flexbox(column, none, none, space-around, center);
+    & img{
+      width: 100%;
+      height: auto;
+    }
+}

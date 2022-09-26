@@ -1,0 +1,12 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.header{
+    width: 100%;
+    height: 7vh;
+    position: fixed;
+    z-index: 1;
+    color: $text-one;
+    background-color: $backgroud-1;
+    @include flexbox(none, none, none,space-between,center);
+}

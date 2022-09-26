@@ -1,0 +1,58 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.songRow{
+    height: 60px;
+    padding: 10px 0px;
+    @include flexbox(none, none, none, space-between, center);
+    color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    &__info-music{
+        @include flexbox(none, none, none, none, center);
+        margin-left: 25px;
+    }
+    &__icon-favorite{
+        width: 20px;
+        margin: 0px 10px;
+        &:hover{
+            color: #a1a1a1;
+        }
+    }
+    &__play-music{
+        @include flexbox(none, none, none, none, center);
+        position: relative;
+    }
+    &__play{
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        color: #ffffff;
+        display: none;
+    }
+    &__image{
+        width: 50px;
+        height: 50px;
+        margin: 0px 15px 0px 0px;
+        object-fit: contain;
+    }
+    &__song-info{
+        & p{
+            min-width: 60px;
+            height: 19px;
+            overflow: hidden;
+        }
+        & h4{
+            min-width: 100px;
+            height: 19px;
+            overflow: hidden;
+            margin-bottom: 2px;
+        }
+    }
+    &:hover{
+        background-color: #8f8f8f49;
+        & .songRow__play{
+            display: inherit;
+        }
+    }
+}

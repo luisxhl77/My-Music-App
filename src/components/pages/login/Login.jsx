@@ -1,22 +1,14 @@
-import styled from "styled-components";
-import { LoginButton } from "../../atoms/buttons";
+import { ButtonLink } from "../../atoms/a-loginButton/buttonLink";
 import { loginURL } from "../../../SpotifyLogin";
+import './login.scss';
 
 export const Login = () => {
   return (
-    <LoginContainer>
-      <img src="../../../../public/MyMusicApp.PNG" alt="logo"/>
-      <LoginButton href={loginURL}>Iniciar sesion</LoginButton>
-    </LoginContainer>
+    <>
+      <figure>
+        <img src="../../../../public/MyMusicApp.PNG" alt="logo"/>
+      </figure>
+      <ButtonLink name= 'Iniciar Sesion' link={loginURL}/>
+    </>
   )
 }
-
-const LoginContainer = styled.div`
-  display: grid;
-  place-items: center;
-  height: 100vh;
-  background-color: #000000;
-  & img{
-    width: 100%;
-  }
-`;

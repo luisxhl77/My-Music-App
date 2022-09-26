@@ -1,22 +1,23 @@
 import styled from "styled-components";
+import './descriptionsList.scss';
 
 export const DescriptionsList = ({playlist}) => {
     const {name, images, owner, followers, tracks} = playlist;
     return (
-        <Info>
-            <div className="contInfo">
-                <img src={ images[0]?.url } alt="" />
+            <div className="DescriptionsList">
+                <figure className="DescriptionsList__image">
+                    <img src={ images[0]?.url } alt="" />
+                </figure>
                 <InfoText>
                     <h5> LISTA </h5>
-                    <p className="nameList">
+                    <p className="DescriptionsList__name-list">
                         { name }
                     </p>
-                    <p className="descripList">
+                    <p className="DescriptionsList__descrip-list">
                         { owner?.display_name } . { followers?.total } "me gusta" { tracks?.total } canciones
                     </p>
                 </InfoText>
             </div>
-        </Info>
     )
 }
 

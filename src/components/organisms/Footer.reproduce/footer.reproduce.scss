@@ -1,0 +1,13 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.footer{
+    height: 9vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    color: $text-one;
+    background-color: $background-2;
+    @include flexbox(none, wrap, none, space-between,none);
+}

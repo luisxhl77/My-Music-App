@@ -1,0 +1,33 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.profileOptions{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    border-radius: 30px;
+    margin: 0px 10px 0px 0px ;
+    &__name{
+        margin: auto 10px;
+    }
+    &__options{
+        height: 8vh;
+        width: 20.5vh;
+        padding-top: 30px;
+        z-index: -1;
+        position: absolute;
+        top: 14px;
+        right: 10px;
+        background-color: #303030;
+        border-radius: 20px 20px 20px 20px;
+        @include flexbox(column, none, none, center, center);
+        display: none;
+    }
+    &:hover{
+        background-color: #b3b3b3;
+        cursor: pointer;
+        & .profileOptions__options{
+          display: inherit;
+        }
+    }
+}

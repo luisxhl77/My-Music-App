@@ -1,0 +1,14 @@
+@import '../../../styles/variables.scss';
+.buttonLink{
+    width: 170px;
+    height: 20px;
+    padding: 20px;
+    border-radius: 40px;
+    color: $text-one;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #1db932;
+    &:hover{
+        box-shadow: 2px 2px 20px #00ff22;
+    }
+}

@@ -1,0 +1,34 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+.main{
+    @include flexbox(column, none, none, none, none);
+    height: 80vh;
+    width: 100%;
+    padding: 2vh 7% 2vh 10%;
+    margin: 7vh 0vh 9vh 0vh;
+    color: #fff;
+    overflow: auto;
+    background: linear-gradient( #4c4682 1%,#000 72%);
+    &__recommended-title{
+        text-align: center;
+        text-shadow: 4px 10px 10px black;
+        margin: 50px 0px 10px 20px;
+    }
+    &__recommended-list{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
+    &::-webkit-scrollbar{
+        background-color: #000000a0;
+        width: 1vh;
+    }
+    &::-webkit-scrollbar-thumb{            /*Diseño del scroll*/
+        background-color: #ffffff;
+    }
+    &::-webkit-scrollbar-thumb:hover{      /*Reaccion del scroll*/
+        background-color: #8bf832;
+    }
+}
