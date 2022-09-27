@@ -6,3 +6,22 @@
     justify-content: $justify;
     align-items: $aItems;
 }
+
+@mixin containerBody ($color1, $color2,){
+    height: 80vh;
+    width: 100%;
+    margin: 7vh 0vh 9vh 0vh;
+    color: #fff;
+    overflow: auto;
+    background: linear-gradient( $color1 1%,$color2 72%);
+    &::-webkit-scrollbar{
+        background-color: #000000a0;
+        width: 1vh;
+    }
+    &::-webkit-scrollbar-thumb{            /*Diseño del scroll*/
+        background-color: #ffffff;
+    }
+    &::-webkit-scrollbar-thumb:hover{      /*Reaccion del scroll*/
+        background-color: #8bf832;
+    }
+}

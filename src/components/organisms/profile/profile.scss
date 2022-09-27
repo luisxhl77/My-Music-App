@@ -3,13 +3,9 @@
 
 .profile{
     @include flexbox(column, none, none, flex-start, center);
-    height: 80vh;
-    width: 100%;
+    @include containerBody(#42a550, #000);
     padding: 2vh 0% 2vh 0%;
-    margin: 7vh 0vh 9vh 0vh;
     border-radius: 10px;
-    background: linear-gradient( #42a550 1%,#000 72%);
-    color: #ffffff;
     & .profile__image{
         width: 300px;
         height: 300px;

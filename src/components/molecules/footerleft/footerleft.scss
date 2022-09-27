@@ -2,11 +2,13 @@
 @import '../../../styles/mixins.scss';
 
 .footerLeft{
-    width: 30%;
+    width: 100%;
     min-width: 280px;
-    @include flexbox(none, none, none, none, center);
+    @include flexbox(none, none, none, center, center);
     color: $text-2;
+    margin: 10px 0px;
     &__image{
+        display: none;
         width: 56px;
         margin: 0px 20px 0px 16px;
         border-radius: 3px;
@@ -29,5 +31,14 @@
             transition: 300ms color ease-in;
             color: #fff;
         }
+    }
+    @media (min-width: $s-small) {
+        width: 25%;
+        margin: 0px 0px;
+        @include flexbox(none, none, none, flex-start, center);
+        &__image{
+            display: inherit;
+        }
+        
     }
 }

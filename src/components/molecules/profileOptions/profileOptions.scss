@@ -9,6 +9,7 @@
     margin: 0px 10px 0px 0px ;
     &__name{
         margin: auto 10px;
+        display: none;
     }
     &__options{
         height: 8vh;
@@ -28,6 +29,11 @@
         cursor: pointer;
         & .profileOptions__options{
           display: inherit;
+        }
+    }
+    @media (min-width: $s-small) {
+        &__name{
+            display: inherit;
         }
     }
 }
