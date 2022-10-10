@@ -16,8 +16,8 @@ export const Playlist = () => {
         <IconsPlaylist/>
         <div className="playlist__list-songs">
           {
-            tracks?.items.map((item) => (
-              <SongRow track={item.track} />
+            tracks?.items.map((item ,index) => (
+              <SongRow track={item.track} key={index}/>
             ))
           }
         </div>

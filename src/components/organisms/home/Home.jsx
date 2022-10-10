@@ -16,8 +16,8 @@ export const Home = () => {
     <main className="main">
       <h1 className="main__recommended-title">PLAYLIST FAVORITAS</h1>
       <section className="main__recommended-list">
-        { userPlaylists?.items.map((item,index) => (
-          <Card name={item.name} description={item.description} image={item.images[0].url} type={item.type} key={index} />
+        { userPlaylists?.items.map((item) => (
+          <Card name={item.name} description={item.description} image={item.images[0].url} type={item.type} key={item.id} />
           ))
         }
       </section>
