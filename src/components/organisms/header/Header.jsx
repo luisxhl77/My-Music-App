@@ -1,6 +1,6 @@
 import './header.scss';
-import { DeploymentArrow } from "../../molecules/DeploymentArrow";
 import { ProfileOptions } from '../../molecules/profileOptions/ProfileOptions';
+import { DeploymentArrow } from '../../molecules/deploymentArrow/DeploymentArrow';
 
 export const Header = () => {
   return (

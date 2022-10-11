@@ -32,20 +32,20 @@ export const Home = () => {
         }
       </section>
 
-      <h1 className="main__recommended-title">New releases</h1>
-      <section className="main__recommended-list">
-        {
-          newReleases?.map((item) => (
-            <Card name={item.name} image={item.images[0].url} description={item.artists[0].name} type={item?.type} id={item.id} key={item.id} />
-          ))
-        }
-      </section>
-
       <h1 className="main__recommended-title">Featured Playlists</h1>
       <section className="main__recommended-list">
         {
           featuredPlaylists?.map((item) => (
             <Card name={item.name} image={item.images[0].url} description={item.description} type={item?.type} id={item.id} key={item.id} />
+          ))
+        }
+      </section>
+
+      <h1 className="main__recommended-title">New releases</h1>
+      <section className="main__recommended-list">
+        {
+          newReleases?.map((item) => (
+            <Card name={item.name} image={item.images[0].url} description={item.artists[0].name} type={item?.type} id={item.id} key={item.id} />
           ))
         }
       </section>

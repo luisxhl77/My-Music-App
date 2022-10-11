@@ -1,0 +1,14 @@
+.arrowContainer{
+    margin-left: 30px;
+    width: 127px;
+    display: flex;
+    justify-content: space-evenly;
+    & .MuiSvgIcon-root{ // <------ arows
+        color: #919191;
+        cursor: pointer;
+        transition: 300ms color ease-in;
+        &:hover{
+            color: #ffffff;
+        }
+    }
+}
