@@ -13,9 +13,12 @@ import { SET_MYSAVEDTRACKS } from "./store/slices/MySavedTracksSlice";
 const spotify = new SpotifyWebApi();
 
 export function App() {
+    const dispatch = useDispatch();
+
     const token = useSelector(selectToken)
     const user = useSelector(selectUser)
-    const dispatch = useDispatch()
+
+    console.log(token)
 
     useEffect(()=>{
         const data = getTokenFromURL();
@@ -30,6 +33,8 @@ export function App() {
         }
 
     },[dispatch])
+
+    localStorage.setItem("token", token);
 
     return (
         <>

@@ -1,10 +1,8 @@
 import { Route, Routes } from "react-router-dom"
 import styled from "styled-components"
+import { AppRouter } from "../../../router/AppRouter"
 import { FooterReproduce } from "../../organisms/Footer.reproduce/Footer.reproduce"
 import { Header } from "../../organisms/header/Header"
-import { Home } from "../../organisms/home/Home"
-import { Playlist } from "../../organisms/playlist/Playlist"
-import { Profile } from "../../organisms/profile/Profile"
 import { Sidebar } from "../../organisms/Sidebar/Sidebar"
 
 export const Player = () => {
@@ -12,12 +10,7 @@ export const Player = () => {
     <SpotifyBody>
       <Header/>
       <Sidebar/>
-      <Routes>
-        <Route path="/" element={ <Home/> }/>
-        <Route path="/Home" element={ <Home/> }/>
-        <Route path="/Playlist" element={ <Playlist/> }/>
-        <Route path="/Profile" element={ <Profile/> }/>
-      </Routes>
+      <AppRouter/>
       <FooterReproduce/>
     </SpotifyBody>
   )
