@@ -1,4 +1,4 @@
-import { AddBox, Favorite, Home, LibraryMusic, Search } from "@mui/icons-material"
+import { Favorite, Home, LibraryMusic, Search } from "@mui/icons-material"
 import { Link } from "react-router-dom"
 import { SiderbarChoice } from "../../molecules/SidebarChoise"
 import './sidebar.scss';
@@ -13,20 +13,17 @@ export const Sidebar = () => {
         </figure>
       </Link>
       <Link to="/Home">
-        <SiderbarChoice title="Inicio" Icon={ Home } />
+        <SiderbarChoice title="Home" Icon={ Home } />
       </Link>
       <Link to="/">
-        <SiderbarChoice title="Buscar" Icon={ Search } />
+        <SiderbarChoice title="search" Icon={ Search } />
       </Link>
       <Link to="/Playlist">
-        <SiderbarChoice title="Tu Biblioteca" Icon={ LibraryMusic } />
+        <SiderbarChoice title="your library" Icon={ LibraryMusic } />
       </Link>
       <hr className="nav__line"/>
-      <Link to="/">
-        <SiderbarChoice title="Crear Playlist" Icon={ AddBox } />
-      </Link>
       <Link to="/Playlist">
-        <SiderbarChoice title="Tus me gusta" Icon={ Favorite } />
+        <SiderbarChoice title="I like you" Icon={ Favorite } />
       </Link>
     </nav>
   )

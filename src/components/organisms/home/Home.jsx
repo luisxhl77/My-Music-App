@@ -9,11 +9,10 @@ import './home.scss';
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const { categories } = useSelector(state => state.categories);
-  const { featuredPlaylists } = useSelector(state => state.featuredPlaylists);
   const { userPlaylists } = useSelector(state => state.userPlaylists);
   const { newReleases } = useSelector(state => state.newReleases);
-  
+  const { featuredPlaylists } = useSelector(state => state.featuredPlaylists);
+  const { categories } = useSelector(state => state.categories);
   useEffect(() => {
     dispatch( getCategorie());
     dispatch( getFeaturedPlaylist());
@@ -24,38 +23,38 @@ export const Home = () => {
   return (
     <main className="main">
 
-      <h1 className="main__recommended-title">Listas de reproducción de usuario</h1>
+      <h1 className="main__recommended-title">User playlists</h1>
       <section className="main__recommended-list">
         {
           userPlaylists?.map((item) => (
-            <Card name={item.name} image={item.images[0].url} description={item.description} type={item?.type} key={item.id} />
+            <Card name={item.name} image={item.images[0].url} description={item.description} type={item?.type} id={item.id} key={item.id} />
           ))
         }
       </section>
 
-      <h1 className="main__recommended-title">Nuevos lanzamientos</h1>
+      <h1 className="main__recommended-title">New releases</h1>
       <section className="main__recommended-list">
         {
           newReleases?.map((item) => (
-            <Card name={item.name} image={item.images[0].url} description={item.artists[0].name} type={item?.type} key={item.id} />
+            <Card name={item.name} image={item.images[0].url} description={item.artists[0].name} type={item?.type} id={item.id} key={item.id} />
           ))
         }
       </section>
 
-      <h1 className="main__recommended-title">Listas de reproducción destacadas</h1>
+      <h1 className="main__recommended-title">Featured Playlists</h1>
       <section className="main__recommended-list">
         {
           featuredPlaylists?.map((item) => (
-            <Card name={item.name} image={item.images[0].url} description={item.description} type={item?.type} key={item.id} />
+            <Card name={item.name} image={item.images[0].url} description={item.description} type={item?.type} id={item.id} key={item.id} />
           ))
         }
       </section>
 
-      <h1 className="main__recommended-title">Categorias</h1>
+      <h1 className="main__recommended-title">Categories</h1>
       <section className="main__recommended-list">
         {
           categories?.map((item) => (
-            <Card name={item.name} image={item.icons[0].url} type={item?.name} key={item?.id}/>
+            <Card name={item.name} image={item.icons[0].url} type={item?.name} id={item?.id} key={item?.id}/>
           ))
         }
       </section>
