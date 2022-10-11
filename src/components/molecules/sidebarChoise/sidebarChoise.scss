@@ -1,13 +1,11 @@
-.choice{
+.choiceOptions{
     color: #919191;
     height: 41px;
     cursor: pointer;
     padding: 0px 0px 0px 5px;
-    &__options{
-        display: flex;
-        align-items: center;
-        transition: 300ms color ease-in;
-    }
+    display: flex;
+    align-items: center;
+    transition: 300ms color ease-in;
     &:hover{
         color: #fff;
     }
