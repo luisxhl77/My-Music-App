@@ -1,12 +1,10 @@
 import { Login } from "./components/pages/login/Login";
-import { Player } from "./components/pages/player/Player";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SpotifyWebApi from "spotify-web-api-js";
 import { getTokenFromURL } from "./SpotifyLogin";
 
 import { selectToken, SET_TOKEN } from "./store/slices/Token/TokenSlice";
-import { getPlaylists } from "./store/slices/playlists/thunks";
 import { getUser } from "./store/slices/user/thunks";
 import { AppRouter } from "./routers/AppRouter";
 
@@ -23,8 +21,6 @@ export function App() {
         if (_token) {
             dispatch(SET_TOKEN(_token));
             spotify.setAccessToken(_token);
-
-            dispatch( getPlaylists("37i9dQZF1DXbDs5HMNanrc") );
             dispatch( getUser() );
         }
     },[dispatch])

@@ -1,20 +1,28 @@
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, useParams } from "react-router-dom";
+import { getPlaylists } from "../../../store/slices/playlists/thunks";
 import { DescriptionsList } from "../../molecules/descriptionsList/DescriptionsList";
 import { IconsPlaylist } from "../../molecules/iconsPlaylist/iconsPlaylist";
 import { SongRow } from "../../molecules/songRow/SongRow";
 import './playlist.scss';
 
 export const Playlist = () => {
-
+  const dispatch = useDispatch();
   const {id} = useParams();
-  console.log(id);
+  const { playlist } = useSelector(state => state.playlist)
+  
+  useEffect(()=>{
+    dispatch( getPlaylists(id) );
+  },[])
 
-  const {playlist} = useSelector(state => state.playlist)
+  if( !playlist ){
+    return <Navigate to= "/Home"/>
+  }
 
   return (
     <main className="playlist">
-      <DescriptionsList {...playlist}/> 
+      <DescriptionsList {...playlist}/>
       <div className="playlist__songs">
         <IconsPlaylist/>
         <div className="playlist__list-songs">

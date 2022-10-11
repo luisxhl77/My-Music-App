@@ -1,12 +1,23 @@
 import { ArrowDropDown } from "@mui/icons-material"
 import { Avatar } from "@mui/material"
 import { useSelector } from "react-redux"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './profileOptions.scss';
 
 export const ProfileOptions = () => {
+
+  const navigate = useNavigate()
+
   const { user } = useSelector(state => state.user);
   const {display_name, images, id} = user;
+
+  const onLogout = () => {  
+    navigate('/Login', {
+      replace: true,
+    })
+  }
+
+
 
   return (
     <div className="profileOptions">
@@ -17,7 +28,7 @@ export const ProfileOptions = () => {
         <Link to="/Profile">
           <button>perfil</button>
         </Link>
-        <button>salir</button>
+        <button onClick={onLogout}>salir</button>
       </div>
     </div>
   )

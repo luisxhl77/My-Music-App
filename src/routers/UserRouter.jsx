@@ -8,7 +8,7 @@ export const UserRouter = () => {
         <>
             <Routes>
                 <Route path="/Home" element={ <Home/> }/>
-                <Route path="/Playlist" element={ <Playlist/> }/>
+                <Route path="/Playlist/:id" element={ <Playlist/> }/>
                 <Route path="/Profile" element={ <Profile/> }/>
 
                 <Route path="/*" element={ <Navigate to= "/Home"/> }/>

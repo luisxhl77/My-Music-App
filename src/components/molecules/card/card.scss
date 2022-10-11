@@ -1,5 +1,4 @@
 
-
 .card{
     padding: 20px 10px;
     height: 260px;
@@ -12,6 +11,7 @@
     cursor: pointer;
     &__play-music{
         position: relative;
+        color: #ffffff;
         & .btnPlay{
             position: absolute;
             bottom: 3px;
@@ -34,6 +34,7 @@
         width: 100%;
         height: 17px;
         margin: 15px 0px 5px;
+        color: #ffffff;
     }
     &__description-playlist{
         width: 100%;
