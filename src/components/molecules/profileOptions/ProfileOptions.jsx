@@ -1,13 +1,12 @@
 import { ArrowDropDown } from "@mui/icons-material"
 import { Avatar } from "@mui/material"
 import { useSelector } from "react-redux"
-import { selectUser } from "../../../store/slices/UserSlice";
 import { Link } from "react-router-dom";
 import './profileOptions.scss';
 
 export const ProfileOptions = () => {
-  const user = useSelector(selectUser);
-  const {display_name, images, id} = user.user;
+  const { user } = useSelector(state => state.user);
+  const {display_name, images, id} = user;
 
   return (
     <div className="profileOptions">

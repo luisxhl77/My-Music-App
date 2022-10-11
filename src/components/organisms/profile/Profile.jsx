@@ -1,11 +1,10 @@
 import { Avatar } from "@mui/material";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../../store/slices/UserSlice";
 import './profile.scss';
 
 export const Profile = () => {
-  const user = useSelector(selectUser);
-  const {followers, display_name, images, id, email} = user.user;
+  const { user } = useSelector(state => state.user);
+  const {followers, display_name, images, id, email} = user;
   
   return (
     <main className="profile">
