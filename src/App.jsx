@@ -8,6 +8,7 @@ import { getTokenFromURL } from "./SpotifyLogin";
 import { selectToken, SET_TOKEN } from "./store/slices/Token/TokenSlice";
 import { getPlaylists } from "./store/slices/playlists/thunks";
 import { getUser } from "./store/slices/user/thunks";
+import { AppRouter } from "./routers/AppRouter";
 
 const spotify = new SpotifyWebApi();
 
@@ -30,8 +31,8 @@ export function App() {
 
     return (
         <>
-            { 
-                user ? <Player/> : <Login/>
+            {
+                user ? <AppRouter/> : <Login/>
             }
         </>
     )

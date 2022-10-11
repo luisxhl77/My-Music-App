@@ -1,6 +1,6 @@
 import { Favorite, Home, LibraryMusic, Search } from "@mui/icons-material"
 import { Link } from "react-router-dom"
-import { SiderbarChoice } from "../../molecules/SidebarChoise"
+import { SiderbarChoice } from "../../molecules/sidebarChoise/SidebarChoise"
 import './sidebar.scss';
 
 export const Sidebar = () => {
@@ -12,19 +12,16 @@ export const Sidebar = () => {
           <img src="../../../public/MyMusicApp.png" alt="logo"/>
         </figure>
       </Link>
-      <Link to="/Home">
-        <SiderbarChoice title="Home" Icon={ Home } />
-      </Link>
-      <Link to="/">
-        <SiderbarChoice title="search" Icon={ Search } />
-      </Link>
-      <Link to="/Playlist">
-        <SiderbarChoice title="your library" Icon={ LibraryMusic } />
-      </Link>
+
+      <SiderbarChoice title="Home" Icon={ Home } nav="/Home" />
+
+      <SiderbarChoice title="search" Icon={ Search } nav="/Search" />
+
+      <SiderbarChoice title="your library" Icon={ LibraryMusic } nav="/Library" />
+
       <hr className="nav__line"/>
-      <Link to="/Playlist">
-        <SiderbarChoice title="I like you" Icon={ Favorite } />
-      </Link>
+
+      <SiderbarChoice title="I like you" Icon={ Favorite } nav="/Playlist" />
     </nav>
   )
 }

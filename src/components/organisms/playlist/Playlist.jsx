@@ -1,10 +1,15 @@
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { DescriptionsList } from "../../molecules/descriptionsList/DescriptionsList";
 import { IconsPlaylist } from "../../molecules/iconsPlaylist/iconsPlaylist";
 import { SongRow } from "../../molecules/songRow/SongRow";
 import './playlist.scss';
 
 export const Playlist = () => {
+
+  const {id} = useParams();
+  console.log(id);
+
   const {playlist} = useSelector(state => state.playlist)
 
   return (

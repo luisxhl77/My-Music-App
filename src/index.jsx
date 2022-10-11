@@ -7,9 +7,11 @@ import './styles/index.scss';
 import store from './store/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <React.StrictMode>
     <Provider store={store}>
-      <App/>
+      <BrowserRouter>
+        <App/>
+      </BrowserRouter>
     </Provider>
-  </BrowserRouter>
+  </React.StrictMode>
 )

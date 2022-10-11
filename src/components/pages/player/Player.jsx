@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import styled from "styled-components"
-import { AppRouter } from "../../../router/AppRouter"
+import { UserRouter } from "../../../routers/UserRouter"
 import { FooterReproduce } from "../../organisms/Footer.reproduce/Footer.reproduce"
 import { Header } from "../../organisms/header/Header"
 import { Sidebar } from "../../organisms/Sidebar/Sidebar"
@@ -10,7 +10,7 @@ export const Player = () => {
     <SpotifyBody>
       <Header/>
       <Sidebar/>
-      <AppRouter/>
+      <UserRouter/>
       <FooterReproduce/>
     </SpotifyBody>
   )
