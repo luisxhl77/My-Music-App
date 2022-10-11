@@ -1,46 +1,61 @@
-import { useSelector } from "react-redux";
-import { selectCategories } from "../../../store/slices/CategoriesSlice";
-import { selectFeaturedPlayLists } from "../../../store/slices/FeaturedPlaylistsSlice";
-import { selectNewReleases } from "../../../store/slices/NewReleasesSlice";
-import { selectUserPlaylists } from "../../../store/slices/UserPlaylistsSlice";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCategorie } from "../../../store/slices/categories/thunks";
+import { getFeaturedPlaylist } from "../../../store/slices/featuredPlaylists/thunks";
+import { getNewrelease } from "../../../store/slices/newReleases/thunks";
+import { getUserPlaylist } from "../../../store/slices/userPlaylist/thunks";
 import { Card } from "../../molecules/card/Card";
 import './home.scss';
 
 export const Home = () => {
-  const userPlaylists = useSelector(selectUserPlaylists);
-  const featuredPlayLists = useSelector(selectFeaturedPlayLists);
-  const newReleases = useSelector(selectNewReleases);
-  const categories = useSelector(selectCategories);
+  const dispatch = useDispatch();
+  const { categories } = useSelector(state => state.categories);
+  const { featuredPlaylists } = useSelector(state => state.featuredPlaylists);
+  const { userPlaylists } = useSelector(state => state.userPlaylists);
+  const { newReleases } = useSelector(state => state.newReleases);
+  
+  useEffect(() => {
+    dispatch( getCategorie());
+    dispatch( getFeaturedPlaylist());
+    dispatch( getUserPlaylist());
+    dispatch( getNewrelease());
+  }, [])
 
   return (
     <main className="main">
-      <h1 className="main__recommended-title">PLAYLIST FAVORITAS</h1>
+
+      <h1 className="main__recommended-title">Listas de reproducción de usuario</h1>
       <section className="main__recommended-list">
-        { userPlaylists?.items.map((item) => (
-          <Card name={item.name} description={item.description} image={item.images[0].url} type={item.type} key={item.id} />
+        {
+          userPlaylists?.map((item) => (
+            <Card name={item.name} image={item.images[0].url} description={item.description} type={item?.type} key={item.id} />
           ))
         }
       </section>
+
+      <h1 className="main__recommended-title">Nuevos lanzamientos</h1>
+      <section className="main__recommended-list">
+        {
+          newReleases?.map((item) => (
+            <Card name={item.name} image={item.images[0].url} description={item.artists[0].name} type={item?.type} key={item.id} />
+          ))
+        }
+      </section>
+
       <h1 className="main__recommended-title">Listas de reproducción destacadas</h1>
       <section className="main__recommended-list">
-        { featuredPlayLists?.playlists?.items.map((item,index) => (
-          <Card name={item.name} description={item.description} image={item.images[0].url} type={item.type} key={index} />
+        {
+          featuredPlaylists?.map((item) => (
+            <Card name={item.name} image={item.images[0].url} description={item.description} type={item?.type} key={item.id} />
           ))
         }
       </section>
-      <h1 className="main__recommended-title">nuevos lanzamientos</h1>
+
+      <h1 className="main__recommended-title">Categorias</h1>
       <section className="main__recommended-list">
         {
-          newReleases?.albums?.items?.map((item,index) => (
-            <Card name={item.name} description={item.artists[0].name} image={item.images[0].url} type={item.album_type} key={index}/>
-          ))
-        }
-      </section>
-      <h1 className="main__recommended-title">CATEGORIAS</h1>
-      <section className="main__recommended-list">
-        {
-          categories?.categories?.items?.map((item,index) => (
-            <Card  name={item.name} image={item.icons[0].url} type={item?.name} key={index}/>
+          categories?.map((item) => (
+            <Card name={item.name} image={item.icons[0].url} type={item?.name} key={item?.id}/>
           ))
         }
       </section>
