@@ -4,21 +4,30 @@ import { getCategorie } from "../../../store/slices/categories/thunks";
 import { getFeaturedPlaylist } from "../../../store/slices/featuredPlaylists/thunks";
 import { getNewrelease } from "../../../store/slices/newReleases/thunks";
 import { getUserPlaylist } from "../../../store/slices/userPlaylist/thunks";
+import { Spinner } from "../../atoms/spinner/Spinner";
 import { Card } from "../../molecules/card/Card";
 import './home.scss';
 
 export const Home = () => {
+  
   const dispatch = useDispatch();
   const { userPlaylists } = useSelector(state => state.userPlaylists);
   const { newReleases } = useSelector(state => state.newReleases);
   const { featuredPlaylists } = useSelector(state => state.featuredPlaylists);
   const { categories } = useSelector(state => state.categories);
+  
   useEffect(() => {
-    dispatch( getCategorie());
-    dispatch( getFeaturedPlaylist());
     dispatch( getUserPlaylist());
     dispatch( getNewrelease());
+    dispatch( getFeaturedPlaylist());
+    dispatch( getCategorie());
   }, [])
+
+  if (!categories, !userPlaylists, !featuredPlaylists, !newReleases) {
+    return (
+      <Spinner/>
+    );
+  }
 
   return (
     <main className="main">
