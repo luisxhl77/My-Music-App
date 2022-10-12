@@ -7,11 +7,11 @@ export const UserRouter = () => {
     return (
         <>
             <Routes>
-                <Route path="/Home" element={ <Home/> }/>
-                <Route path="/Playlist/:id" element={ <Playlist/> }/>
-                <Route path="/Profile" element={ <Profile/> }/>
+                <Route path="/home" element={ <Home/> }/>
+                <Route path="/playlist/:id" element={ <Playlist/> }/>
+                <Route path="/profile" element={ <Profile/> }/>
 
-                <Route path="/*" element={ <Navigate to= "/Home"/> }/>
+                <Route path="/*" element={ <Navigate to= "/home"/> }/>
 
             </Routes>
         </>
