@@ -1,4 +1,4 @@
-import { Favorite, Home, LibraryMusic, Search } from "@mui/icons-material"
+import { Favorite, Home, Search } from "@mui/icons-material"
 import { Link } from "react-router-dom"
 import { SiderbarChoice } from "../../molecules/sidebarChoise/SidebarChoise"
 import logoMyMusicApp from '../../../img/MyMusicApp.png'
@@ -18,11 +18,9 @@ export const Sidebar = () => {
 
       <SiderbarChoice title="search" Icon={ Search } nav="/search" />
 
-      <SiderbarChoice title="your library" Icon={ LibraryMusic } nav="/library" />
-
       <hr className="nav__line"/>
 
-      <SiderbarChoice title="I like you" Icon={ Favorite } nav="/playlist/:id" />
+      <SiderbarChoice title="I like you" Icon={ Favorite } nav="/collectionTrack" />
     </nav>
   )
 }

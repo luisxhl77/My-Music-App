@@ -12,7 +12,8 @@ export const Playlist = () => {
   const dispatch = useDispatch();
   const {id} = useParams();
   const { playlist } = useSelector(state => state.playlist);
-
+  console.log(playlist);
+  
   useEffect(()=>{
     dispatch( getPlaylists(id) );
   },[])
@@ -25,13 +26,19 @@ export const Playlist = () => {
 
   return (
     <main className="playlist">
-      <DescriptionsList { ...playlist }/>
+      <DescriptionsList 
+        name={ playlist?.name } 
+        images={ playlist.images[0]?.url} 
+        owner={ playlist?.owner?.display_name } 
+        followers={ playlist?.followers?.total} 
+        tracks={ playlist?.tracks?.total }
+      />
       <div className="playlist__songs">
         <IconsPlaylist/>
         <div className="playlist__list-songs">
           {
-            playlist?.tracks?.items.map((item ,index) => (
-              <SongRow track={item.track} key={index}/>
+            playlist?.tracks?.items.map(( item ) => (
+              <SongRow track={item.track} key={item.track.id}/>
             ))
           }
         </div>

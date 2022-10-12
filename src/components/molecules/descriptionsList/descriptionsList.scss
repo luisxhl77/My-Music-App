@@ -3,6 +3,12 @@
 .DescriptionsList{
     @include flexbox(none, none, none, none, flex-end);
     padding: 20px 10% 0px 10%;
+    &__infoText{
+        flex: 1;
+        & h1{
+            margin-bottom: 10px;
+        }
+    }
     &__image{
         width: 25vw;
         margin: 7vh 25px 0px 25px;
@@ -13,5 +19,9 @@
     }
     &__descrip-list{
         color: #a1a1a1;
+    }
+    &__list{
+        float: left;
+        margin-right: 5px;
     }
 }

@@ -6,6 +6,6 @@ const spotify = new SpotifyWebApi();
 export const getMySavedTrack = () => {
     return async( dispatch ) => {
         const data = await spotify.getMySavedTracks();
-        dispatch(setMySavedTracks({mySavedTracks: data.items}));
+        dispatch(setMySavedTracks({mySavedTracks: data}));
     }
 }

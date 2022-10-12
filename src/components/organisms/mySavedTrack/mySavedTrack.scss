@@ -1,0 +1,15 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.mySavedTracks{
+    @include containerBody(#48338c , #000);
+    padding: 0vh 0vh 4vh;
+    &__songs{
+        background-color: #1f1e1e29;
+        margin: 20px 0px;
+        width: 100%;
+    }
+    &__list-songs{
+        padding: 20px 10% 0px 10% ;
+    }
+}
