@@ -1,4 +1,3 @@
-import { Login } from "./components/pages/login/Login";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SpotifyWebApi from "spotify-web-api-js";
@@ -6,6 +5,7 @@ import { getTokenFromURL } from "./SpotifyLogin";
 
 import { selectToken, SET_TOKEN } from "./store/slices/Token/TokenSlice";
 import { getUser } from "./store/slices/user/thunks";
+import { Login } from "./components/pages/login/Login";
 import { AppRouter } from "./routers/AppRouter";
 
 const spotify = new SpotifyWebApi();
@@ -16,6 +16,7 @@ export function App() {
     const token = useSelector(selectToken);
 
     useEffect(()=>{
+
         const data = getTokenFromURL();
         const _token = data.access_token;
         if (_token) {
@@ -23,6 +24,7 @@ export function App() {
             spotify.setAccessToken(_token);
             dispatch( getUser() );
         }
+
     },[dispatch])
 
     return (

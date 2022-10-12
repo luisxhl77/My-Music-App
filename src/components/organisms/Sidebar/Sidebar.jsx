@@ -21,7 +21,7 @@ export const Sidebar = () => {
 
       <hr className="nav__line"/>
 
-      <SiderbarChoice title="I like you" Icon={ Favorite } nav="/Playlist" />
+      <SiderbarChoice title="I like you" Icon={ Favorite } nav="/Playlist/:id" />
     </nav>
   )
 }
