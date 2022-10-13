@@ -8,11 +8,11 @@ export const Profile = () => {
   
   return (
     <main className="profile">
-      <Avatar src={ images[0].url } alt={ id } className="profile__image"/>
+      <Avatar src={ images[0]?.url } alt={ id } className="profile__image"/>
       <h2 className="profile__name-data">Nombre</h2>
       <p className="profile__data">{display_name}</p>
       <h2 className="profile__name-data">seguidores</h2>
-      <p className="profile__data"> {followers.total} </p>
+      <p className="profile__data"> {followers?.total} </p>
       <h2 className="profile__name-data">E-mail</h2>
       <p className="profile__data">{email}</p>
     </main>

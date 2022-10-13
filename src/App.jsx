@@ -2,26 +2,34 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTokenFromURL } from "./SpotifyLogin";
 
-import { getUser } from "./store/slices/user/thunks";
-import { Login } from "./components/pages/login/Login";
-import { AppRouter } from "./routers/AppRouter";
 import { setAccessTokenUser } from "./store/slices/token/thunks";
 
-export const App = () => {
+import { Login } from "./components/pages/login/Login";
+import { AppRouter } from "./routers/AppRouter";
 
+export const App = () => {
     const dispatch = useDispatch();
-    const { user } = useSelector(state => state.user);
-    
+    const { token } = useSelector(state => state.token);
+
     useEffect(() => {
         const token =  getTokenFromURL();
         dispatch(setAccessTokenUser(token))
-        dispatch( getUser() );
     }, [])
+
+    let authenticated = false;
+
+    if (token) {
+        window.localStorage.setItem("token", token.access_token);
+        let accessToken = window.localStorage.getItem("token");
+        if (accessToken !== "undefined") {
+            authenticated = true;
+        }
+    }
 
     return (
         <>
             {
-                user ? <AppRouter/> : <Login/>
+                authenticated ? <AppRouter/> : <Login/>
             }
         </>
     )

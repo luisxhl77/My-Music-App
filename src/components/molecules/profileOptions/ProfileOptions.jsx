@@ -24,8 +24,8 @@ export const ProfileOptions = () => {
 
   return (
     <div className="profileOptions">
-      <Avatar src={ user.images[0].url } alt={ user.id }/>
-      <h4 className="profileOptions__name"> { user.display_name } </h4>
+      <Avatar src={ user?.images[0]?.url } alt={ user?.id }/>
+      <h4 className="profileOptions__name"> { user?.display_name } </h4>
       <ArrowDropDown/>
       <div className="profileOptions__options">
         <Link to="/Profile">
