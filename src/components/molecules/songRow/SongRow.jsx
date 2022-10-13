@@ -2,7 +2,6 @@ import { FavoriteBorder, PlayCircleFilled } from "@mui/icons-material";
 import './songRow.scss';
 
 export const SongRow = ({track, mySavedTracks}) => {
-    console.log("aquis", mySavedTracks )
     return (
         <section className="songRow">
             <div className="songRow__info-music">

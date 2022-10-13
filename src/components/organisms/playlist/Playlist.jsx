@@ -12,7 +12,6 @@ export const Playlist = () => {
   const dispatch = useDispatch();
   const {id} = useParams();
   const { playlist } = useSelector(state => state.playlist);
-  console.log(playlist);
   
   useEffect(()=>{
     dispatch( getPlaylists(id) );

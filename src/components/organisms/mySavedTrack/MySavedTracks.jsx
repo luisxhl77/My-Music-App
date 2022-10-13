@@ -18,8 +18,6 @@ export const MySavedTrack = () => {
     dispatch(getUser());
   }, [])
 
-  console.log(mySavedTracks);
-
   if( !mySavedTracks ){
     return (
       <Spinner/>

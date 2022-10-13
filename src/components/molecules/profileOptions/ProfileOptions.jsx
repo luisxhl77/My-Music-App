@@ -13,7 +13,7 @@ export const ProfileOptions = () => {
   const navigate = useNavigate()
   
   useEffect(() => {
-    dispatch(getUser());
+    dispatch(getUser()); 
   }, [])
   
   const onLogout = () => {  

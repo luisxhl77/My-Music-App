@@ -9,7 +9,6 @@ import { Card } from "../../molecules/card/Card";
 import './home.scss';
 
 export const Home = () => {
-  
   const dispatch = useDispatch();
   const { userPlaylists } = useSelector(state => state.userPlaylists);
   const { newReleases } = useSelector(state => state.newReleases);
@@ -17,13 +16,13 @@ export const Home = () => {
   const { categories } = useSelector(state => state.categories);
   
   useEffect(() => {
+    dispatch( getCategorie());
+    dispatch( getFeaturedPlaylist());
     dispatch( getUserPlaylist());
     dispatch( getNewrelease());
-    dispatch( getFeaturedPlaylist());
-    dispatch( getCategorie());
   }, [])
 
-  if (!categories, !userPlaylists, !featuredPlaylists, !newReleases) {
+  if (!categories) {
     return (
       <Spinner/>
     );
