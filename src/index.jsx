@@ -1,16 +1,36 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { App } from './App';
 import React from 'react';
 import './styles/index.scss';
 import store from './store/store';
+import { PublicRoute } from './routers/PublicRoute';
+import { PrivateRoute } from './routers/PrivateRoute';
+import { UserRouter } from './routers/UserRouter';
+import { Login } from './components/pages/login/Login';
+import { Player } from './components/pages/player/Player';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   //<React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App/>
+        
+        <Routes>
+
+          <Route path="/login" element={
+            <PublicRoute>
+              <Login/>
+            </PublicRoute>
+          }/>
+          
+          <Route path="/*" element={
+            <PrivateRoute>
+              <Player/>
+            </PrivateRoute>
+          }/>
+          
+        </Routes>
+      
       </BrowserRouter>
     </Provider>
   //</React.StrictMode>
