@@ -5,15 +5,20 @@ export const authSlice = createSlice({
     initialState: {
         access_token: null,
         expires_in: null,
-        stateUser: false
+        logged: false
     },
     reducers: {
-        setAuth: (state, action) => {
-            state.auth = action.payload.access_token;
-            state.auth = action.payload.expires_in;
-            state.auth = action.payload.stateUser;
+        login: (state, action) => {
+            state.access_token = action.payload.access_token;
+            state.expires_in = action.payload.expires_in;
+            state.logged = true;
+        },
+        logout: (state, action) => {
+            state.logged = false;
+            state.access_token = null;
+            state.expires_in = null;
         }
     }
 });
 
-export const { setAuth } = authSlice.actions;
+export const { login, logout } = authSlice.actions;
