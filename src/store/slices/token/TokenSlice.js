@@ -12,4 +12,4 @@ export const tokenSlice = createSlice({
     }
 });
 
-export const { SET_TOKEN, setToken } = tokenSlice.actions;
+export const { setToken } = tokenSlice.actions;

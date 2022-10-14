@@ -1,11 +1,11 @@
 import './descriptionsList.scss';
-import icon from '../../../img/favorite.png'
+import imageFavorite from '../../../img/favorite.png'
 
 export const DescriptionsList = ({name, images, owner, followers, tracks}) => {
     return (
         <div className="DescriptionsList">
             <figure className="DescriptionsList__image">
-                <img src={ (images) ? images : icon } alt="" />
+                <img src={ (images) ? images : imageFavorite } alt="" />
             </figure>
             <div className="DescriptionsList__infoText">
                 <h5> LIST </h5>

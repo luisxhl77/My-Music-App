@@ -9,22 +9,20 @@ import { AppRouter } from "./routers/AppRouter";
 
 export const App = () => {
     const dispatch = useDispatch();
-    const { token } = useSelector(state => state.token);
-
-    useEffect(() => {
-        const token =  getTokenFromURL();
-        dispatch(setAccessTokenUser(token))
-    }, [])
-
+    // const { token } = useSelector(state => state.token);
     let authenticated = false;
+    let accessToken = null;
+    
+    const { access_token } =  getTokenFromURL();
+    if ( access_token ) {
 
-    if (token) {
-        window.localStorage.setItem("token", token.access_token);
-        let accessToken = window.localStorage.getItem("token");
-        if (accessToken !== "undefined") {
-            authenticated = true;
-        }
+        window.localStorage.setItem("token", access_token);
+        
+        authenticated = true;
     }
+    useEffect(() => {
+        dispatch(setAccessTokenUser(access_token));
+    }, [])
 
     return (
         <>

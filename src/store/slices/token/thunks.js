@@ -3,10 +3,10 @@ import { setToken } from "./TokenSlice";
 
 const spotify = new SpotifyWebApi();
 
-export const setAccessTokenUser = (data) => {
+export const setAccessTokenUser = (token) => {
     return async( dispatch ) => {
 
-        dispatch(setToken({token: data}));
-        spotify.setAccessToken(data.access_token);
+        dispatch(setToken({token: token}));
+        spotify.setAccessToken(token);
     }
 }
