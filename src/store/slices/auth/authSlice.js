@@ -14,9 +14,9 @@ export const authSlice = createSlice({
             state.logged = true;
         },
         logout: (state, action) => {
-            state.logged = false;
             state.access_token = null;
             state.expires_in = null;
+            state.logged = false;
         }
     }
 });

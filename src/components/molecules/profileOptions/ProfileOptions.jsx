@@ -12,15 +12,16 @@ export const ProfileOptions = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   
-  useEffect(() => {
-    dispatch(getUser()); 
-  }, [])
-  
-  const onLogout = () => {  
+  const onLogout = () => {
+    window.localStorage.clear();
     navigate('/Login', {
       replace: true,
     })
   }
+  useEffect(() => {
+    dispatch(getUser()); 
+  }, [])
+
 
   return (
     <div className="profileOptions">

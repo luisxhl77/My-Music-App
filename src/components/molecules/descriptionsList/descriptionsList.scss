@@ -2,7 +2,7 @@
 @import '../../../styles/mixins.scss';
 .DescriptionsList{
     @include flexbox(none, none, none, none, flex-end);
-    padding: 20px 10% 0px 10%;
+    padding: 0px 1% 0px 1%;
     &__infoText{
         flex: 1;
         & h1{
@@ -10,12 +10,14 @@
         }
     }
     &__image{
-        width: 25vw;
+        width: 20vw;
         margin: 7vh 25px 0px 25px;
         box-shadow: 2px 2px 30px #000;
     }
     &__name-list{
+        margin: 0px 0px 10px 0px;
         font-size: 5vw;
+        font-weight: 900;
     }
     &__descrip-list{
         color: #a1a1a1;

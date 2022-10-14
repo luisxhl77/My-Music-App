@@ -15,7 +15,7 @@ export const SongRow = ({track, mySavedTracks}) => {
                 </div>
                 <div className="songRow__song-info">
                     <h4>{(track) ? track?.name : mySavedTracks?.name}</h4>
-                    <p>
+                    <p className="songRow__description">
                         {(track) ? track.artists.map(artist => artist.name).join(', ') : mySavedTracks.artists.map(artist => artist.name).join(', ')}
                     </p>
                 </div> 

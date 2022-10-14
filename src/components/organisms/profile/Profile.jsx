@@ -4,17 +4,16 @@ import './profile.scss';
 
 export const Profile = () => {
   const { user } = useSelector(state => state.user);
-  const {followers, display_name, images, id, email} = user;
   
   return (
     <main className="profile">
-      <Avatar src={ images[0]?.url } alt={ id } className="profile__image"/>
+      <Avatar src={ user?.images[0]?.url } alt={ user?.id } className="profile__image"/>
       <h2 className="profile__name-data">Nombre</h2>
-      <p className="profile__data">{display_name}</p>
+      <p className="profile__data">{ user?.display_name }</p>
       <h2 className="profile__name-data">seguidores</h2>
-      <p className="profile__data"> {followers?.total} </p>
+      <p className="profile__data"> { user?.followers?.total } </p>
       <h2 className="profile__name-data">E-mail</h2>
-      <p className="profile__data">{email}</p>
+      <p className="profile__data">{ user?.email }</p>
     </main>
   )
 }

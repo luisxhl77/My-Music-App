@@ -37,17 +37,18 @@
         object-fit: contain;
     }
     &__song-info{
-        & p{
-            min-width: 60px;
-            height: 19px;
-            overflow: hidden;
-        }
         & h4{
             min-width: 100px;
             height: 19px;
             overflow: hidden;
             margin-bottom: 2px;
         }
+    }
+    &__description{
+        min-width: 60px;
+        height: 19px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &:hover{
         background-color: #8f8f8f49;

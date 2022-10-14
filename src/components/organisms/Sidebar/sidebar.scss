@@ -12,7 +12,8 @@
   background-color: $backgroud-1;
   @include flexbox(column, none, none, none, none);
   &__line{
-    border: 0.1px solid $text-2;
+
+    border: 0.1px solid rgb(90, 90, 90);
     width: 80%;
     margin: 20px auto; 
   }

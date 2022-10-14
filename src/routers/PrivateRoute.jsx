@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Navigate, useLocation } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 import { getTokenFromURL } from "../SpotifyLogin";
 import { setAccessTokenUser } from "../store/slices/token/thunks";
 
@@ -11,7 +11,7 @@ export const PrivateRoute = ({ children }) => {
 
     const dispatch = useDispatch();
     
-    const { access_token } =  getTokenFromURL();
+    const { access_token } = getTokenFromURL();
     
     let logged = false;
     
@@ -20,9 +20,10 @@ export const PrivateRoute = ({ children }) => {
         logged = true;
         localStorage.setItem("logged", logged);
     }
+
     useEffect(() => {
-        dispatch(setAccessTokenUser(access_token));
-    }, [])
+        dispatch(setAccessTokenUser(window.localStorage.getItem("token")));
+    }, [PrivateRoute])
     
     const logeo = localStorage.getItem("logged");
     
