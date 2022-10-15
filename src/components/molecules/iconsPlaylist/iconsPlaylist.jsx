@@ -1,12 +1,18 @@
 import { FavoriteBorder, MoreHoriz, PlayCircleFilled } from "@mui/icons-material";
 import './iconsPlaylist.scss';
 
-export const IconsPlaylist = () => {
+export const IconsPlaylist = ({mySavedTracks}) => {
   return (
     <div className="iconsPlaylist">
       <PlayCircleFilled className="play-icon"/>
-      <FavoriteBorder className="favorite-icon"/>
-      <MoreHoriz fontSize="large" className="option-Icon"/>
+      {
+        (!mySavedTracks) ?
+        <FavoriteBorder className="favorite-icon"/> : <></>
+      }
+      {
+        (!mySavedTracks) ?
+        <MoreHoriz fontSize="large" className="option-Icon"/> : <></>
+      }
     </div>
   )
 }

@@ -6,7 +6,6 @@ import './styles/index.scss';
 import store from './store/store';
 import { PublicRoute } from './routers/PublicRoute';
 import { PrivateRoute } from './routers/PrivateRoute';
-import { UserRouter } from './routers/UserRouter';
 import { Login } from './components/pages/login/Login';
 import { Player } from './components/pages/player/Player';
 

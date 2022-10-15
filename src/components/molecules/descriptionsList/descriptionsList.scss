@@ -15,15 +15,31 @@
         box-shadow: 2px 2px 30px #000;
     }
     &__name-list{
-        margin: 0px 0px 10px 0px;
-        font-size: 5vw;
+        margin: 0px 0px 26px 0px;
+        font-size: 4.9vw;
         font-weight: 900;
+        text-transform: lowercase;
+        letter-spacing: -1px;
+        word-spacing: -4px;
+        &:first-letter {
+            text-transform: uppercase;
+        }
     }
     &__descrip-list{
-        color: #a1a1a1;
+        color: #ffffff;
+    }
+    &__owner{
+        float: left;
+        margin-right: 5px;
+        font-weight: 700;
+        font-size: 13px;
     }
     &__list{
         float: left;
         margin-right: 5px;
+        font-size: 13px;
     }
+}
+.MuiAvatar-root{
+    width: 10px;
 }

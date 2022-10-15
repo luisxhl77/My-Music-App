@@ -28,11 +28,11 @@ export const MySavedTrack = () => {
     <main className="mySavedTracks">
       <DescriptionsList name={"Songs you like"} tracks={mySavedTracks.total} owner={user.display_name}/>
       <div className="mySavedTracks__songs">
-        <IconsPlaylist/>
+        <IconsPlaylist mySavedTracks={true}/>
         <div className="mySavedTracks__list-songs">
           {
             mySavedTracks?.items.map(( item ) => (
-              <SongRow mySavedTracks={item?.track} key={item?.track?.id}/>
+              <SongRow track={item?.track} key={item?.track?.id}/>
             ))
           }
         </div>

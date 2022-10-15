@@ -2,6 +2,8 @@ import './descriptionsList.scss';
 import imageFavorite from '../../../img/favorite.png'
 
 export const DescriptionsList = ({name, images, owner, followers, tracks}) => {
+
+
     return (
         <div className="DescriptionsList">
             <figure className="DescriptionsList__image">
@@ -13,7 +15,7 @@ export const DescriptionsList = ({name, images, owner, followers, tracks}) => {
                     { name }
                 </p>
                 <ul className="DescriptionsList__descrip-list">
-                    <li className="DescriptionsList__list"> { owner } - </li>
+                    <li className="DescriptionsList__owner"> { owner } - </li>
                     <li className="DescriptionsList__list"> { followers } { (followers) ? '" I like it " - ' : "" } </li>
                     <li className="DescriptionsList__list"> { tracks } songs </li>
                 </ul>
