@@ -3,7 +3,9 @@
 
 .footer-right {
     width: 25%;
+    display: none;
     @include flexbox(none, none, none, flex-end, center);
+    display: none;
     &__icon{
         margin: 0px 5px;
     }
@@ -11,10 +13,11 @@
         padding:0px 15px 0px 5px;
         @include flexbox(none, none, none, none, center);
     }
-    &__Slider{
+    & .footer-right__Slider{
         margin-left: 5px;
         min-width: 80px;
         font-size: 1px;
+        color: #fff;
         & .MuiSlider-thumb{
             height: 0px;       
             width: 0px;
@@ -30,6 +33,7 @@
     }
     @media (min-width: $s-small) {
         display: none;
+        width: 20%;
     }
     @media (min-width: 868px) {
         display: inherit;

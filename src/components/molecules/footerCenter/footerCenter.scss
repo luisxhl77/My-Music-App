@@ -8,13 +8,12 @@
     @include flexbox(column, none, center, center, center);
     color: $text-2;
     &__options-Play{
-        padding: 1px 0px;
         min-width: 40%;
         @include flexbox(none,none,none, space-evenly, center);
     }
     &__iconPlayer{
         font-size: 29px;
-        width: 100px;
+        margin: 0px 5px;
         cursor: pointer;
         &:hover{
             color: #fff;
@@ -25,12 +24,7 @@
             transition: none;
         }
     }
-    &__btnPlay{
-        font-size: 42px;
-        cursor: pointer;
-    }
     &__time{
-        padding-top: 12px;
         max-width: 300px;
         min-width: 100%;
         @include flexbox(none, none, none, center, center);
@@ -39,7 +33,33 @@
             margin: 0px 7px;
         }
     }
-    &__time-bar{
+    & .footer-center__iconPlayOption{
+        font-size: 38px;
+        margin: 0px 5px;
+        cursor: pointer;
+        &:hover{
+            color: #fff;
+            transition: 300ms color ease-in;
+        }
+        &:active{
+            color: #b2b2b2;
+            transition: none;
+        }
+    }
+    & .footer-center__btnPlay{
+        font-size: 42px;
+        cursor: pointer;
+        color: #fff;
+        margin: 0px 5px;
+        &:hover{
+            transition: 300ms color ease-in;
+        }
+        &:active{
+            color: #b2b2b2;
+            transition: none;
+        }
+    }
+    & .footer-center__time-bar{
         width: 70%;
         height: 14%;
         color: #fff;
@@ -57,7 +77,6 @@
         }
     }
     @media (min-width: $s-small) {
-        width: 40%;
-        
+        width: 50%; 
     }
 }

@@ -5,6 +5,7 @@
     width: 100%;
     min-width: 280px;
     @include flexbox(none, none, none, center, center);
+    display: none;
     color: $text-2;
     margin: 10px 0px;
     &__image{

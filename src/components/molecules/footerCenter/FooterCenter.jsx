@@ -7,9 +7,9 @@ export const FooterCenter = () => {
         <div className="footer-center">
             <div className="footer-center__options-Play">
                 <Shuffle className="footer-center__iconPlayer"/>
-                <SkipPrevious className="footer-center__iconPlayer"/>
+                <SkipPrevious className="footer-center__iconPlayOption"/>
                 <PlayCircle className="footer-center__btnPlay"/>
-                <SkipNext className="footer-center__iconPlayer"/>
+                <SkipNext className="footer-center__iconPlayOption"/>
                 <Repeat className="footer-center__iconPlayer"/>
             </div>
             <time className="footer-center__time">
