@@ -8,6 +8,7 @@ import { categoriesSlice } from "./slices/categories/CategoriesSlice";
 import { userPlaylistsSlice } from "./slices/userPlaylist/UserPlaylistsSlice";
 import { newReleasesSlices } from "./slices/newReleases/NewReleasesSlice";
 import { authSlice } from "./slices/auth/authSlice";
+import { searchPlaylistSlice } from "./slices/searchPlaylist/searchPlaylistSlice";
 
 export default configureStore({
     reducer:{
@@ -20,5 +21,6 @@ export default configureStore({
         newReleases: newReleasesSlices.reducer,
         categories: categoriesSlice.reducer,
         auth: authSlice.reducer,
+        searchPlaylist: searchPlaylistSlice.reducer,
     }
 })

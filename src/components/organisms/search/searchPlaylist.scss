@@ -7,12 +7,16 @@
     &__iconSearch{
         color: #000000;
     }
+    &__results{
+        display: flex;
+        flex-wrap: wrap;
+    }
     &__search{
         display: flex;
         align-items: center;
         width: 240px;
         background-color: #ffffff;
-        margin: 20px auto auto;
+        margin: 20px auto;
         border-radius: 30px;
         padding: 0px 10px;
     }

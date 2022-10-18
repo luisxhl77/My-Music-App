@@ -4,15 +4,18 @@ import { useForm } from "../../../hooks/useForm";
 import { Card } from "../../molecules/card/Card";
 import { Search } from "@mui/icons-material";
 import "./searchPlaylist.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getSearchMyPlaylist } from "../../../store/slices/searchPlaylist/thunks";
 
 export const SearchPlaylist = () => {
 
+  const dispatch = useDispatch();
   const navigae = useNavigate()
   const location = useLocation();
+  const { searchPlaylist } = useSelector( state => state.searchPlaylist );
 
   const { q = '' } = querySting.parse( location.search );
-  console.log("vamos",query);
-
   const { searchtext, onInputChange } = useForm({
     searchtext: ""
   })
@@ -20,9 +23,18 @@ export const SearchPlaylist = () => {
   const onSearchSubmit = (event) => {
     event.preventDefault();
     if (searchtext.trim().length > 0) {
-      console.log({searchtext})
       navigae( `?q=${searchtext}` )
     }
+  }
+
+  useEffect(()=>{
+    dispatch( getSearchMyPlaylist(q) );
+  },[q])
+
+  if( !searchPlaylist ){
+    return (
+      <Spinner/>
+    )
   }
 
   return (
@@ -41,9 +53,13 @@ export const SearchPlaylist = () => {
           />
         </div>
       </form>
-      <div>
-        <Card/>
-      </div>
+      <section className="main__results">
+        {
+          searchPlaylist?.map((item) => (
+            <Card name={item.name} image={item.images[0].url} description={item.description} type={item?.type} id={item.id} key={item.id} />
+          ))
+        }
+      </section>
     </main>
   )
 }
