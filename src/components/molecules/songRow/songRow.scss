@@ -36,12 +36,14 @@
         margin: 0px 15px 0px 0px;
         object-fit: contain;
     }
-    &__song-info{
-        & h4{
-            min-width: 100px;
-            height: 19px;
-            overflow: hidden;
-            margin-bottom: 2px;
+    &__titleSong{
+        min-width: 100px;
+        height: 19px;
+        overflow: hidden;
+        margin-bottom: 2px;
+        text-transform: lowercase;
+        &:first-letter {
+            text-transform: uppercase;
         }
     }
     &__description{
@@ -49,6 +51,8 @@
         height: 19px;
         overflow: hidden;
         text-overflow: ellipsis;
+        text-transform: capitalize;
+        color: #b2b2b2;
     }
     &:hover{
         background-color: #8f8f8f49;

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCategorie } from "../../../store/slices/categories/thunks";
 import { getFeaturedPlaylist } from "../../../store/slices/featuredPlaylists/thunks";
 import { getNewrelease } from "../../../store/slices/newReleases/thunks";
+import { getUser } from "../../../store/slices/user/thunks";
 import { getUserPlaylist } from "../../../store/slices/userPlaylist/thunks";
 import { Spinner } from "../../atoms/spinner/Spinner";
 import { Card } from "../../molecules/card/Card";
@@ -14,15 +15,16 @@ export const Home = () => {
   const { newReleases } = useSelector(state => state.newReleases);
   const { featuredPlaylists } = useSelector(state => state.featuredPlaylists);
   const { categories } = useSelector(state => state.categories);
-  
-  useEffect(() => {
-    dispatch( getCategorie());
-    dispatch( getFeaturedPlaylist());
-    dispatch( getUserPlaylist());
-    dispatch( getNewrelease());
-  }, [])
 
-  if (!categories) {
+  useEffect(() => {
+    dispatch( getUser() ); 
+    dispatch( getUserPlaylist());
+    dispatch( getCategorie());
+    dispatch( getNewrelease());
+    dispatch( getFeaturedPlaylist());
+  }, []);
+
+  if (!categories, !userPlaylists, !newReleases, !featuredPlaylists) {
     return (
       <Spinner/>
     );

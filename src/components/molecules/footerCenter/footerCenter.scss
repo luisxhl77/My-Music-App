@@ -3,11 +3,11 @@
 
 .footer-center{
     width: 100%;
-    min-width: 300px;
     max-width: 100%;
     @include flexbox(column, none, center, center, center);
     color: $text-2;
     &__options-Play{
+        padding-top: 5px;
         min-width: 40%;
         @include flexbox(none,none,none, space-evenly, center);
     }
@@ -76,7 +76,7 @@
             }
         }
     }
-    @media (min-width: $s-small) {
+    @media (min-width: $large) {
         width: 50%; 
     }
 }

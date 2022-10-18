@@ -12,7 +12,7 @@ export const Playlist = () => {
   const dispatch = useDispatch();
   const {id} = useParams();
   const { playlist } = useSelector(state => state.playlist);
-  
+
   useEffect(()=>{
     dispatch( getPlaylists(id) );
   },[])

@@ -15,7 +15,6 @@ export const MySavedTrack = () => {
 
   useEffect(() => {
     dispatch( getMySavedTrack() );
-    dispatch(getUser());
   }, [])
 
   if( !mySavedTracks ){
@@ -26,7 +25,7 @@ export const MySavedTrack = () => {
 
   return (
     <main className="mySavedTracks">
-      <DescriptionsList name={"Songs you like"} tracks={mySavedTracks.total} owner={user.display_name}/>
+      <DescriptionsList name={"Songs you like"} tracks={mySavedTracks?.total} owner={user?.display_name}/>
       <div className="mySavedTracks__songs">
         <IconsPlaylist mySavedTracks={true}/>
         <div className="mySavedTracks__list-songs">

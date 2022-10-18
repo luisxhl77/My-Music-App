@@ -7,6 +7,7 @@
     color: #fff;
     border-radius: 30px;
     margin: 0px 10px 0px 0px ;
+    transition: 300ms background-color ease-in;
     &__name{
         margin: auto 10px;
         display: none;
@@ -25,7 +26,7 @@
         display: none;
     }
     &:hover{
-        background-color: #b3b3b3;
+        background-color: #3a3a3abe;
         cursor: pointer;
         & .profileOptions__options{
           display: inherit;

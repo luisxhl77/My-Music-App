@@ -20,7 +20,7 @@ export const SongRow = ({track}) => {
                 </div>
                 <div className="songRow__song-info">
 
-                    <h4> { track?.name } </h4>
+                    <h4 className="songRow__titleSong"> { track?.name } </h4>
                     <p className="songRow__description"> { track.artists.map(artist => artist.name).join(', ')} </p>
                
                 </div> 

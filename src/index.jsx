@@ -16,18 +16,18 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         
         <Routes>
 
-          <Route path="/login" element={
-            <PublicRoute>
-              <Login/>
-            </PublicRoute>
-          }/>
-          
           <Route path="/*" element={
             <PrivateRoute>
               <Player/>
             </PrivateRoute>
           }/>
-          
+
+          <Route path="/login" element={
+            <PublicRoute>
+              <Login/>
+            </PublicRoute>
+          }/>
+        
         </Routes>
       
       </BrowserRouter>

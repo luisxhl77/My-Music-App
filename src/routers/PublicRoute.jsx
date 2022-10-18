@@ -8,7 +8,7 @@ export const PublicRoute = ({ children }) => {
 
     const dispatch = useDispatch();
     
-    const { access_token } =  getTokenFromURL();
+    const { access_token } = getTokenFromURL();
     
     let logged = false;
     

@@ -2,8 +2,7 @@
 @import '../../../styles/mixins.scss';
 
 .footer-right {
-    width: 25%;
-    display: none;
+    width: 21%;
     @include flexbox(none, none, none, flex-end, center);
     display: none;
     &__icon{
@@ -31,12 +30,8 @@
             }
         }
     }
-    @media (min-width: $s-small) {
-        display: none;
-        width: 20%;
-    }
-    @media (min-width: 868px) {
+    @media (min-width: $large) {
+        width: 21%;
         display: inherit;
     }
-    
 }

@@ -5,9 +5,6 @@ import { getTokenFromURL } from "../SpotifyLogin";
 import { setAccessTokenUser } from "../store/slices/token/thunks";
 
 export const PrivateRoute = ({ children }) => {
-    // const {pathname, search} = useLocation();
-    // const lastPath = pathname + search;
-    // window.localStorage.setItem( 'lastPath', lastPath )
 
     const dispatch = useDispatch();
     
@@ -20,10 +17,9 @@ export const PrivateRoute = ({ children }) => {
         logged = true;
         localStorage.setItem("logged", logged);
     }
-
     useEffect(() => {
         dispatch(setAccessTokenUser(window.localStorage.getItem("token")));
-    }, [PrivateRoute])
+    }, [])
     
     const logeo = localStorage.getItem("logged");
     

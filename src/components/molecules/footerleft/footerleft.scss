@@ -33,7 +33,7 @@
             color: #fff;
         }
     }
-    @media (min-width: $s-small) {
+    @media (min-width: $large) {
         width: 25%;
         margin: 0px 0px;
         @include flexbox(none, none, none, flex-start, center);
