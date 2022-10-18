@@ -1,0 +1,24 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+.main{
+    @include flexbox(column, none, none, none, none);
+    @include containerBody(#2a1088, #000);
+    padding: 2vh 0px 2vh 0px;
+    &__iconSearch{
+        color: #000000;
+    }
+    &__search{
+        display: flex;
+        align-items: center;
+        width: 240px;
+        background-color: #ffffff;
+        margin: 20px auto auto;
+        border-radius: 30px;
+        padding: 0px 10px;
+    }
+    &__searchInput{
+        padding: 13px 5px;
+        width: 240px;
+        height: 40px;
+    }
+}

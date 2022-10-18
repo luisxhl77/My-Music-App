@@ -13,14 +13,12 @@ export const Sidebar = () => {
           <img src={ logoMyMusicApp } alt="logo"/>
         </figure>
       </Link>
-
-      <SiderbarChoice title="Home" Icon={ Home } nav="/home" />
-
-      <SiderbarChoice title="search" Icon={ Search } nav="/search" />
-
-      <hr className="nav__line"/>
-
-      <SiderbarChoice title="I like you" Icon={ Favorite } nav="/collectionTrack" />
+      <ul>
+        <SiderbarChoice title="Home" Icon={ Home } nav="/home" />
+        <SiderbarChoice title="search" Icon={ Search } nav="/search" />
+        <hr className="nav__line"/>
+        <SiderbarChoice title="I like you" Icon={ Favorite } nav="/collectionTrack" />
+      </ul>
     </nav>
   )
 }

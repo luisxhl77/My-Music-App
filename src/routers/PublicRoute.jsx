@@ -18,7 +18,7 @@ export const PublicRoute = ({ children }) => {
         localStorage.setItem("logged", logged);
     }
     useEffect(() => {
-        dispatch(setAccessTokenUser(access_token));
+        dispatch(setAccessTokenUser(window.localStorage.getItem("token")));
     }, [])
     
     const logeo = localStorage.getItem("logged");

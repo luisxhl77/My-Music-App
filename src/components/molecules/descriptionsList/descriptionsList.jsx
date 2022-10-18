@@ -5,11 +5,11 @@ export const DescriptionsList = ({name, images, owner, followers, tracks}) => {
 
 
     return (
-        <div className="DescriptionsList">
+        <section className="DescriptionsList">
             <figure className="DescriptionsList__image">
                 <img src={ (images) ? images : imageFavorite } alt="" />
             </figure>
-            <div className="DescriptionsList__infoText">
+            <article className="DescriptionsList__infoText">
                 <h5> LIST </h5>
                 <p className="DescriptionsList__name-list">
                     { name }
@@ -19,7 +19,7 @@ export const DescriptionsList = ({name, images, owner, followers, tracks}) => {
                     <li className="DescriptionsList__list"> { followers } { (followers) ? '" I like it " - ' : "" } </li>
                     <li className="DescriptionsList__list"> { tracks } songs </li>
                 </ul>
-            </div>
-        </div>
+            </article>
+        </section>
     )
 }

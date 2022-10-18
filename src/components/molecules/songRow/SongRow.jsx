@@ -3,7 +3,7 @@ import './songRow.scss';
 
 export const SongRow = ({track}) => {
     return (
-        <section className="songRow">
+        <div className="songRow">
             <div className="songRow__info-music">
                 
                 <div className="songRow__play-music">
@@ -27,6 +27,6 @@ export const SongRow = ({track}) => {
             
             </div>
             <FavoriteBorder className="songRow__icon-favorite"/>
-        </section>
+        </div>
     )
 }

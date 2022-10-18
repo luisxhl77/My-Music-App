@@ -32,7 +32,7 @@ export const Playlist = () => {
         followers={ playlist?.followers?.total} 
         tracks={ playlist?.tracks?.total }
       />
-      <div className="playlist__songs">
+      <section className="playlist__songs">
         <IconsPlaylist/>
         <div className="playlist__list-songs">
           {
@@ -41,7 +41,7 @@ export const Playlist = () => {
             ))
           }
         </div>
-      </div>
+      </section>
     </main>
   )
 }

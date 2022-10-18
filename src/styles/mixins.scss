@@ -9,7 +9,7 @@
 
 @mixin containerBody ($color1, $color2,){
     height: 80vh;
-    width: 100%;
+    width: calc(100% - 45px);
     margin: 7vh 0vh 9vh 45px;
     color: #fff;
     overflow: auto;
