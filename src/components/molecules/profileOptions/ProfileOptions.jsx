@@ -1,7 +1,7 @@
 import { ArrowDropDown } from "@mui/icons-material"
 import { Avatar } from "@mui/material"
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import './profileOptions.scss';
 
 export const ProfileOptions = () => {
@@ -17,16 +17,17 @@ export const ProfileOptions = () => {
   }
 
   return (
+    
     <div className="profileOptions">
       <Avatar src={ user?.images[0]?.url } alt={ user?.id }/>
       <h4 className="profileOptions__name"> { user?.display_name } </h4>
       <ArrowDropDown/>
       <div className="profileOptions__options">
-        <Link to="/Profile">
-          <button>perfil</button>
-        </Link>
-        <button onClick={onLogout}>salir</button>
-      </div>
+        <NavLink to="/Profile" className={ ({ isActive }) => `profileOptions__option ${ isActive ? 'activeoption' : ''} `}>
+          <p> profile </p>
+        </NavLink>
+        <p className="profileOptions__option" onClick={onLogout} > onlogout </p>
+      </div> 
     </div>
   )
 }

@@ -3,10 +3,11 @@
 
 .nav{
   width: 45px;
-  height: 100vh;
+  height: 120vh;
   position: fixed;
   overflow: hidden;
   z-index: 1;
+  top: 0;
   left: 0;
   font-size: 0.9rem;
   background-color: $backgroud-1;
@@ -19,7 +20,7 @@
   }
   &__logo{
     width: 123px;
-    margin: 15px 0px 10px;
+    margin: 15px 0px 10px 3px;
   }
   &:hover{
     width: 200px;

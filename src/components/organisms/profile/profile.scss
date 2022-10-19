@@ -5,15 +5,12 @@
     @include flexbox(column, none, none, flex-start, center);
     @include containerBody(#42a550, #000);
     padding: 2vh 0% 2vh 0%;
-    border-radius: 10px;
     & .profile__image{
-        width: 300px;
-        height: 300px;
+        width: 260px;
+        height: 260px;
         margin: 30px 0px;
     }
     &__name-data{
         margin: 25px 0px 10px;
-    }
-    &__data{
     }
 }

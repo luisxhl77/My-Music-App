@@ -8,9 +8,11 @@ export const Card = ({name, description, image, type, id}) => {
         <div className="card">
             <Link to={`/playlist/${id}`} className="card__textLink"> 
                 <div className="card__play-music">
-                    <figure className="card__image">
-                        <img src={image} alt="cover" className="card__img" id="disk1"/>
-                    </figure>
+                    {/* <figure className="card__image">
+                    </figure> */}
+                        <div className="card__image">
+                            <img src={image} alt="cover" className="card__img" id="disk1"/>
+                        </div>
                     <PlayCircleFilled fontSize="large" className="btnPlay"/>
                 </div>   
                 <h5 className="card__name-playlist">{name}</h5>

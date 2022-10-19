@@ -1,11 +1,20 @@
 @import '../../../styles/mixins.scss';
 @import '../../../styles/variables.scss';
-#root{
-    height: 100vh;
-    background-color: $backgroud-1;
-    @include flexbox(column, none, none, space-around, center);
-    & img{
-      width: 100%;
+.login{
+  height: 100vh;
+  background-color: $backgroud-1;
+  @include flexbox(column, none, center, space-evenly, center);
+  &__figure{
+    @include flexbox(column, none, center, center, center);
+  }
+  &__img{
+    width: 95%;
+    height: auto;
+  }
+  @media (min-width: $large) {
+    &__img{
+      width: 70%;
       height: auto;
     }
+  }
 }

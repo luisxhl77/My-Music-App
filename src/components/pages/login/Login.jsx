@@ -6,11 +6,11 @@ import logoMyMusicApp from '../../../img/MyMusicApp.png'
 export const Login = () => {
   
   return (
-    <>
-      <figure>
-        <img src={logoMyMusicApp} alt="logo"/>
+    <div className="login">
+      <figure className="login__figure">
+        <img src={logoMyMusicApp} alt="logo" className="login__img"/>
       </figure>
       <ButtonLink name= 'Iniciar Sesion' link={loginURL}/>
-    </>
+    </div>
   )
 }
