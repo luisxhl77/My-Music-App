@@ -7,7 +7,6 @@ import { featuredPlaylistsSlice } from "./slices/featuredPlaylists/FeaturedPlayl
 import { categoriesSlice } from "./slices/categories/CategoriesSlice";
 import { userPlaylistsSlice } from "./slices/userPlaylist/UserPlaylistsSlice";
 import { newReleasesSlices } from "./slices/newReleases/NewReleasesSlice";
-import { authSlice } from "./slices/auth/authSlice";
 import { searchPlaylistSlice } from "./slices/searchPlaylist/searchPlaylistSlice";
 
 export default configureStore({
@@ -20,7 +19,6 @@ export default configureStore({
         featuredPlaylists: featuredPlaylistsSlice.reducer,
         newReleases: newReleasesSlices.reducer,
         categories: categoriesSlice.reducer,
-        auth: authSlice.reducer,
         searchPlaylist: searchPlaylistSlice.reducer,
     }
 })

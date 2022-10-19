@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCategorie } from "../../../store/slices/categories/thunks";
 import { getFeaturedPlaylist } from "../../../store/slices/featuredPlaylists/thunks";
 import { getNewrelease } from "../../../store/slices/newReleases/thunks";
-import { getUser } from "../../../store/slices/user/thunks";
+import { setAccessTokenUser } from "../../../store/slices/token/thunks";
 import { getUserPlaylist } from "../../../store/slices/userPlaylist/thunks";
 import { Spinner } from "../../atoms/spinner/Spinner";
 import { Card } from "../../molecules/card/Card";
@@ -17,7 +17,7 @@ export const Home = () => {
   const { categories } = useSelector(state => state.categories);
 
   useEffect(() => {
-    dispatch( getUser() ); 
+    dispatch( setAccessTokenUser(window.localStorage.getItem("token")))
     dispatch( getUserPlaylist());
     dispatch( getCategorie());
     dispatch( getNewrelease());

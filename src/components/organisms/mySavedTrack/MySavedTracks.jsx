@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getMySavedTrack } from "../../../store/slices/mySavedTracks/thunks";
-import { getUser } from "../../../store/slices/user/thunks";
+import { setAccessTokenUser } from "../../../store/slices/token/thunks";
 import { Spinner } from "../../atoms/spinner/Spinner";
 import { DescriptionsList } from "../../molecules/descriptionsList/DescriptionsList";
 import { IconsPlaylist } from "../../molecules/iconsPlaylist/iconsPlaylist";
@@ -14,6 +14,7 @@ export const MySavedTrack = () => {
   const { user } = useSelector(state => state.user);
 
   useEffect(() => {
+    dispatch(setAccessTokenUser(window.localStorage.getItem("token")))
     dispatch( getMySavedTrack() );
   }, [])
 
