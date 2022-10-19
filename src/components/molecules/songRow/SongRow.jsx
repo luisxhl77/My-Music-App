@@ -2,6 +2,7 @@ import { FavoriteBorder, PlayCircleFilled } from "@mui/icons-material";
 import './songRow.scss';
 
 export const SongRow = ({track}) => {
+
     return (
         <div className="songRow">
             <div className="songRow__info-music">
@@ -11,14 +12,14 @@ export const SongRow = ({track}) => {
                     <figure className="songRow__image">
 
                         <img src={ track?.album?.images[0]?.url } alt="album"/>
-                        <span className="songRow__play">
+                        <span className="songRow__play" >
                             <PlayCircleFilled fontSize="large"/>
                         </span>
 
                     </figure>
                 
                 </div>
-                <div className="songRow__song-info">
+                <div className="songRow__song-info" >
 
                     <h4 className="songRow__titleSong"> { track?.name } </h4>
                     <p className="songRow__description"> { track.artists.map(artist => artist.name).join(', ')} </p>
@@ -26,7 +27,7 @@ export const SongRow = ({track}) => {
                 </div> 
             
             </div>
-            <FavoriteBorder className="songRow__icon-favorite"/>
+            <FavoriteBorder className="songRow__icon-favorite" onClick={()=> addFavorites(idTracks)}/>
         </div>
     )
 }

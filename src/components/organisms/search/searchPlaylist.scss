@@ -2,14 +2,13 @@
 @import '../../../styles/mixins.scss';
 .main{
     @include flexbox(column, none, none, none, none);
-    @include containerBody(#2a1088, #000);
+    @include containerBody(#701088, #000);
     padding: 2vh 0px 2vh 0px;
     &__iconSearch{
         color: #000000;
     }
     &__results{
-        display: flex;
-        flex-wrap: wrap;
+        @include flexbox(none, wrap, none, center, none);
     }
     &__search{
         display: flex;
@@ -24,5 +23,11 @@
         padding: 13px 5px;
         width: 240px;
         height: 40px;
+    }
+    @media (min-width: $s-small) {
+        padding: 2vh 0px 2vh 0px;
+        &__results{
+            @include flexbox(none, wrap, none, flex-start, none);
+        }
     }
 }

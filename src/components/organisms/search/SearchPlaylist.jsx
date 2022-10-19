@@ -11,7 +11,7 @@ import { getSearchMyPlaylist } from "../../../store/slices/searchPlaylist/thunks
 export const SearchPlaylist = () => {
 
   const dispatch = useDispatch();
-  const navigae = useNavigate()
+  const navigae = useNavigate();
   const location = useLocation();
   const { searchPlaylist } = useSelector( state => state.searchPlaylist );
 
@@ -47,7 +47,7 @@ export const SearchPlaylist = () => {
             name="searchtext" 
             id="" 
             className="main__searchInput" 
-            placeholder={"¿What do you want to hear?"}
+            placeholder={"¿What playlist do you want to listen to?"}
             value= {searchtext}
             onChange={onInputChange}
           />
