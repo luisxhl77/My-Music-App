@@ -1,7 +1,7 @@
-import { UserRouter } from "../../../routers/UserRouter"
-import { FooterReproduce } from "../../organisms/Footer.reproduce/Footer.reproduce"
 import { Header } from "../../organisms/header/Header"
 import { Sidebar } from "../../organisms/Sidebar/Sidebar"
+import { FooterReproduce } from "../../organisms/Footer.reproduce/Footer.reproduce"
+import { UserRouter } from "../../../routers/UserRouter"
 
 export const Player = () => {
   return (
@@ -9,7 +9,7 @@ export const Player = () => {
       <Header/>
       <Sidebar/>
       <UserRouter/>
-      <FooterReproduce/>
+      <FooterReproduce/>Ñ
     </>
   )
 }

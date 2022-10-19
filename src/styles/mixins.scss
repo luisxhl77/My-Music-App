@@ -10,7 +10,7 @@
 @mixin containerBody ($color1, $color2,){
     height: 80vh;
     width: calc(100% - 45px);
-    margin: 7vh 0vh 9vh 45px;
+    margin: 7vh 0vh 7vh 45px;
     color: #fff;
     overflow: auto;
     background: linear-gradient( $color1 1%,$color2 72%);
@@ -21,7 +21,7 @@
     &::-webkit-scrollbar-thumb{            /*Diseño del scroll*/
         transition: 300ms color ease-in;
         background-color: #f3f3f365;
-    transition: 300ms color ease-in;
+        transition: 300ms color ease-in;
     }
     &::-webkit-scrollbar-thumb:hover{      /*Reaccion del scroll*/
         background-color: #f3f3f38e;
