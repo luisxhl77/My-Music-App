@@ -6,7 +6,6 @@
     padding: 10px 0px;
     @include flexbox(none, none, none, space-between, center);
     color: #fff;
-    overflow: hidden;
     cursor: pointer;
     &__info-music{
         @include flexbox(none, none, none, none, center);
@@ -14,7 +13,7 @@
     }
     &__icon-favorite{
         width: 20px;
-        margin: 0px 10px;
+        margin: 0px 15px;
         &:hover{
             color: #a1a1a1;
         }
@@ -37,20 +36,22 @@
         object-fit: contain;
     }
     &__titleSong{
-        min-width: 100px;
-        height: 19px;
+        height: 16px;
         overflow: hidden;
-        margin-bottom: 2px;
+        white-space: wrap;
+        text-overflow: ellipsis;
+        margin-bottom: 4px;
         text-transform: lowercase;
         &:first-letter {
             text-transform: uppercase;
         }
     }
     &__description{
-        min-width: 60px;
-        height: 19px;
+        width: 100%;
         overflow: hidden;
+        white-space: wrap;
         text-overflow: ellipsis;
+        height: 16px;
         text-transform: capitalize;
         color: #b2b2b2;
     }

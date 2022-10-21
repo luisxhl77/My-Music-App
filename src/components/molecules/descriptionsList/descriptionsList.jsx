@@ -7,7 +7,7 @@ export const DescriptionsList = ({name, images, owner, followers, tracks}) => {
     return (
         <section className="DescriptionsList">
             <figure className="DescriptionsList__image">
-                <img src={ (images) ? images : imageFavorite } alt="" />
+                <img src={ (images) ? images : imageFavorite } alt="" className="DescriptionsList__img"/>
             </figure>
             <article className="DescriptionsList__infoText">
                 <h5> LIST </h5>

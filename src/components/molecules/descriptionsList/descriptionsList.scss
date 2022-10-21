@@ -1,31 +1,42 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 .DescriptionsList{
-    @include flexbox(none, none, none, none, flex-end);
-    padding: 0px 1% 0px 1%;
+    @include flexbox(column, wrap, none, none, flex-start);
+
     &__infoText{
-        flex: 1;
+        margin: 0px 0px 0px 25px;
         & h1{
             margin-bottom: 10px;
         }
     }
     &__image{
-        width: 20vw;
-        margin: 7vh 25px 0px 25px;
+        height: 190px;
+        min-width: 190px;
+        width: 190px;
+        margin: 7vh auto 2vh;
+        // margin: 7vh 25px 0px 25px;
         box-shadow: 2px 2px 30px #000;
+        
+    }
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
     &__name-list{
         margin: 0px 0px 26px 0px;
-        font-size: 4.9vw;
+        font-size: 4.5vw;
         font-weight: 900;
         text-transform: lowercase;
-        letter-spacing: -1px;
-        word-spacing: -4px;
+        // letter-spacing: -1px;
+        // word-spacing: -4px;
         &:first-letter {
             text-transform: uppercase;
         }
     }
     &__descrip-list{
+        @include flexbox(row, wrap, none, none, none);
         color: #ffffff;
     }
     &__owner{
@@ -35,9 +46,24 @@
         font-size: 13px;
     }
     &__list{
-        float: left;
         margin-right: 5px;
         font-size: 13px;
+    }
+    @media (min-width: $medium) {
+        @include flexbox(row, none, none, flex-start, flex-end);
+        &__image{
+            height: 230px;
+            min-width: 230px;
+            width: 232px;
+            margin: 7vh 25px 0px 25px;
+        }
+        &__infoText{
+            margin: 0px 0px 0px 0px;
+        }
+        &__name-list{
+            letter-spacing: -1px;
+            word-spacing: -4px;
+        }
     }
 }
 .MuiAvatar-root{

@@ -10,7 +10,7 @@ import './mySavedTrack.scss';
 
 export const MySavedTrack = () => {
   const dispatch = useDispatch();
-  const { mySavedTracks } = useSelector(state => state.mySavedTracks);
+  const { mySavedTracks, loaded } = useSelector(state => state.mySavedTracks);
   const { user } = useSelector(state => state.user);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export const MySavedTrack = () => {
     dispatch( getMySavedTrack() );
   }, [])
 
-  if( !mySavedTracks ){
+  if( loaded ){
     return (
       <Spinner/>
     )
