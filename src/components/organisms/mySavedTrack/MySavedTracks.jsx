@@ -10,11 +10,11 @@ import './mySavedTrack.scss';
 
 export const MySavedTrack = () => {
   const dispatch = useDispatch();
-  const { mySavedTracks, loaded } = useSelector(state => state.mySavedTracks);
-  const { user } = useSelector(state => state.user);
+  const { mySavedTracks, loaded } = useSelector( state => state.mySavedTracks );
+  const { user } = useSelector( state => state.user );
 
   useEffect(() => {
-    dispatch(setAccessTokenUser(window.localStorage.getItem("token")))
+    dispatch( setAccessTokenUser(window.localStorage.getItem("token")) )
     dispatch( getMySavedTrack() );
   }, [])
 
@@ -26,13 +26,16 @@ export const MySavedTrack = () => {
 
   return (
     <main className="mySavedTracks">
-      <DescriptionsList name={"Songs you like"} tracks={mySavedTracks?.total} owner={user?.display_name}/>
+      <DescriptionsList name={"Songs you like"} tracks={ mySavedTracks?.total } owner={ user?.display_name }/>
       <div className="mySavedTracks__songs">
-        <IconsPlaylist mySavedTracks={true}/>
+        <IconsPlaylist mySavedTracks={ true }/>
         <div className="mySavedTracks__list-songs">
           {
             mySavedTracks?.items.map(( item ) => (
-              <SongRow track={item?.track} key={item?.track?.id}/>
+              <SongRow 
+                track = { item?.track } 
+                key   = { item?.track?.id }
+              />
             ))
           }
         </div>

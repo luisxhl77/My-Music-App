@@ -3,7 +3,7 @@
 
 .iconsPlaylist{
     @include flexbox(none, none, none, none, center);
-    padding: 20px 1% 0px 1%;
+    padding: 20px 0px 0px 0px;
     & .play-icon{
         color: #00ff22;
         font-size: 70px;

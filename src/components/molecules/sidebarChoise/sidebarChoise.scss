@@ -6,11 +6,11 @@
     display: flex;
     align-items: center;
     transition: 300ms color ease-in;
+    &__title{
+        margin: 10px 0px 0px 5px;
+    }
     &:hover{
         color: #fff;
-    }
-    & h5{
-        margin: 10px 0px 0px 5px;
     }
     & .MuiSvgIcon-root{
         font-size: 31px;

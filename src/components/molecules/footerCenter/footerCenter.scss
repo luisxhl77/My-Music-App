@@ -28,10 +28,10 @@
         max-width: 300px;
         min-width: 100%;
         @include flexbox(none, none, none, center, center);
-        & p{
-            font-size: 1.2vh;
-            margin: 0px 7px;
-        }
+    }
+    &__timeNumber{
+        font-size: 1.2vh;
+        margin: 0px 7px;
     }
     & .footer-center__iconPlayOption{
         font-size: 38px;

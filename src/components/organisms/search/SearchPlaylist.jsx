@@ -7,31 +7,32 @@ import "./searchPlaylist.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getSearchMyPlaylist } from "../../../store/slices/searchPlaylist/thunks";
+import { Spinner } from "../../atoms/spinner/Spinner";
 
 export const SearchPlaylist = () => {
 
   const dispatch = useDispatch();
   const navigae = useNavigate();
   const location = useLocation();
-  const { searchPlaylist } = useSelector( state => state.searchPlaylist );
+  const { searchPlaylist, loaded } = useSelector( state => state.searchPlaylist );
 
   const { q = '' } = querySting.parse( location.search );
   const { searchtext, onInputChange } = useForm({
     searchtext: ""
   })
 
-  const onSearchSubmit = (event) => {
+  const onSearchSubmit = ( event ) => {
     event.preventDefault();
-    if (searchtext.trim().length > 0) {
-      navigae( `?q=${searchtext}` )
+    if ( searchtext.trim().length > 0 ) {
+      navigae( `?q=${ searchtext }` )
     }
   }
 
   useEffect(()=>{
-    dispatch( getSearchMyPlaylist(q) );
-  },[q])
+    dispatch( getSearchMyPlaylist( q ) );
+  },[ q ])
 
-  if( !searchPlaylist ){
+  if( loaded ){
     return (
       <Spinner/>
     )
@@ -48,15 +49,22 @@ export const SearchPlaylist = () => {
             id="" 
             className="main__searchInput" 
             placeholder={"¿What playlist do you want to listen to?"}
-            value= {searchtext}
-            onChange={onInputChange}
+            value= { searchtext }
+            onChange={ onInputChange }
           />
         </div>
       </form>
       <section className="main__results">
         {
-          searchPlaylist?.map((item) => (
-            <Card name={item.name} image={item.images[0].url} description={item.description} type={item?.type} id={item.id} key={item.id} />
+          searchPlaylist?.map(( item ) => (
+            <Card 
+              name        = { item?.name } 
+              image       = { item?.images[0]?.url } 
+              description = { item?.description } 
+              type        = { item?.type } 
+              id          = { item?.id } 
+              key         = { item?.id } 
+            />
           ))
         }
       </section>

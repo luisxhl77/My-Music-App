@@ -22,12 +22,12 @@ export const SongRow = ({track}) => {
                 <div className="songRow__song-info" >
 
                     <h4 className="songRow__titleSong"> { track?.name } </h4>
-                    <p className="songRow__description"> { track.artists.map(artist => artist.name).join(', ')} </p>
+                    <p className="songRow__description"> { track.artists.map(artist => artist.name).join(', ') } </p>
                
                 </div> 
             
             </div>
-            <FavoriteBorder className="songRow__icon-favorite" onClick={()=> addFavorites(idTracks)}/>
+            <FavoriteBorder className="songRow__icon-favorite"/>
         </div>
     )
 }

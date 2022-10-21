@@ -9,12 +9,13 @@ import { SongRow } from "../../molecules/songRow/SongRow";
 import './playlist.scss';
 
 export const Playlist = () => {
+
   const dispatch = useDispatch();
-  const {id} = useParams();
-  const { playlist } = useSelector(state => state.playlist);
+  const { id } = useParams();
+  const { playlist } = useSelector( state => state.playlist );
 
   useEffect(()=>{
-    dispatch( getPlaylists(id) );
+    dispatch( getPlaylists( id ) );
   },[])
 
   if( !playlist ){
@@ -25,23 +26,29 @@ export const Playlist = () => {
 
   return (
     <main className="playlist">
+
       <DescriptionsList 
-        name={ playlist?.name } 
-        images={ playlist.images[0]?.url} 
-        owner={ playlist?.owner?.display_name } 
-        followers={ playlist?.followers?.total} 
-        tracks={ playlist?.tracks?.total }
+        name      = { playlist?.name } 
+        images    = { playlist?.images[0]?.url } 
+        owner     = { playlist?.owner?.display_name } 
+        followers = { playlist?.followers?.total } 
+        tracks    = { playlist?.tracks?.total }
       />
+
       <section className="playlist__songs">
         <IconsPlaylist/>
         <div className="playlist__list-songs">
           {
             playlist?.tracks?.items.map(( item ) => (
-              <SongRow track={item.track} key={item.track.id}/>
+              <SongRow 
+                track = { item?.track } 
+                key   = { item?.track?.id }
+              />
             ))
           }
         </div>
       </section>
+
     </main>
   )
 }

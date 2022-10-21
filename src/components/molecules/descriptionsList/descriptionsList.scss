@@ -2,7 +2,6 @@
 @import '../../../styles/mixins.scss';
 .DescriptionsList{
     @include flexbox(column, wrap, none, none, flex-start);
-
     &__infoText{
         margin: 0px 0px 0px 25px;
         & h1{
@@ -14,9 +13,7 @@
         min-width: 190px;
         width: 190px;
         margin: 7vh auto 2vh;
-        // margin: 7vh 25px 0px 25px;
-        box-shadow: 2px 2px 30px #000;
-        
+        box-shadow: 2px 2px 30px #000; 
     }
     &__img{
         width: 100%;

@@ -16,14 +16,14 @@
     }
     &__info-song{
         margin-right: 17px;
-        & h4{
-            font-size: 1.3vh;
-            color: $text-one;
-            margin: 3px 0px 5px;
-        }
-        & p{
-            font-size: 1.1vh;
-        }
+    }
+    &__info-tittle{
+        font-size: 1.3vh;
+        color: $text-one;
+        margin: 3px 0px 5px;
+    }
+    &__info-text{
+        font-size: 1.1vh;
     }
     &__icon{
         margin: auto 8px;

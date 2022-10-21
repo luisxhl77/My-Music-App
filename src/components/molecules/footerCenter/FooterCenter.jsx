@@ -13,9 +13,9 @@ export const FooterCenter = () => {
                 <Repeat className="footer-center__iconPlayer"/>
             </div>
             <time className="footer-center__time">
-                <p>2:32</p>
+                <p className="footer-center__timeNumber"> 2:32 </p>
                 <Slider className="footer-center__time-bar"/>
-                <p>1:28</p>
+                <p className="footer-center__timeNumber"> 1:28 </p>
             </time>
         </div>
     )

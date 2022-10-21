@@ -1,6 +1,5 @@
-import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 import './deploymentArrow.scss'
 
 export const DeploymentArrow = () => {
