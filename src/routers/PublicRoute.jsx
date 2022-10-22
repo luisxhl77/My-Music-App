@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { getTokenFromURL } from "../SpotifyLogin";
-import { setAccessTokenUser } from "../store/slices/token/thunks";
+import { setAccessTokenUser } from "../store/slices";
 
 export const PublicRoute = ({ children }) => {
 
