@@ -9,7 +9,7 @@ import { userPlaylistsSlice } from "./slices/userPlaylist/UserPlaylistsSlice";
 import { newReleasesSlices } from "./slices/newReleases/NewReleasesSlice";
 import { searchPlaylistSlice } from "./slices/searchPlaylist/searchPlaylistSlice";
 
-export default configureStore({
+export const store = configureStore({
     reducer:{
         user: userSlice.reducer,
         token: tokenSlice.reducer,

@@ -1,16 +1,14 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import React from 'react';
-import store from './store/store';
-import { PublicRoute } from './routers/PublicRoute';
-import { PrivateRoute } from './routers/PrivateRoute';
-import { Login } from './components/pages/login/Login';
-import { Player } from './components/pages/player/Player';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { store } from './store';
+import { PublicRoute, PrivateRoute } from './routers';
+import { Login, Player } from './components/pages';
 import './styles/index.scss';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
         
@@ -32,5 +30,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       
       </BrowserRouter>
     </Provider>
-  // </React.StrictMode>
+  </React.StrictMode>
 )
