@@ -1,6 +1,6 @@
 import { Favorite, Home, Search } from "@mui/icons-material"
 import { Link } from "react-router-dom"
-import { SiderbarChoice } from "../../molecules/sidebarChoise/SidebarChoise"
+import { SiderbarChoice } from "../../molecules"
 import logoMyMusicApp from '../../../img/MyMusicApp2.png'
 import './sidebar.scss';
 

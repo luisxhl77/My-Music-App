@@ -22,6 +22,7 @@ const scope = [
   "user-read-email",
   "user-read-private"
 ]
+
 export const loginURL = `${endpoint}?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}&scope=${scope.join("%20")}&show_dialog=true`;
 
 export const getTokenFromURL = ()=> {

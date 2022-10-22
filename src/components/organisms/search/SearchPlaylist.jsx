@@ -1,13 +1,13 @@
-import { useLocation, useNavigate } from "react-router-dom";
-import querySting from 'query-string';
-import { useForm } from "../../../hooks/useForm";
-import { Card } from "../../molecules/card/Card";
-import { Search } from "@mui/icons-material";
-import "./searchPlaylist.scss";
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getSearchMyPlaylist } from "../../../store/slices/searchPlaylist/thunks";
-import { Spinner } from "../../atoms/spinner/Spinner";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Search } from "@mui/icons-material";
+import querySting from 'query-string';
+import { getSearchMyPlaylist } from "../../../store/slices";
+import { useForm } from "../../../hooks";
+import { Card } from "../../molecules";
+import { Spinner } from "../../atoms";
+import "./searchPlaylist.scss";
 
 export const SearchPlaylist = () => {
 

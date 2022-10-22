@@ -2,20 +2,15 @@
 @import '../../../styles/mixins.scss';
 
 .loading{
-    @include containerBody(#466d82, #000);
+    @include flexbox(none, none, center, center, center);
+    @include containerBody(#000000, #000000);
     padding: 0vh 0vh 4vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    background-color: red;
     &__spinner{
-        border: 4px solid rgba(0, 0, 0, 0.1);
+        border: 4px solid #0000001a;
         width: 36px;
         height: 36px;
         border-radius: 50%;
-        border-left-color: #09f;
-    
+        border-color: #747474 #747474 #747474 #15ff00;
         animation: spin 1s ease infinite;
     }
 }

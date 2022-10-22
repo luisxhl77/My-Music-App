@@ -1,7 +1,7 @@
-import { ButtonLink } from "../../atoms/a-loginButton/buttonLink";
 import { loginURL } from "../../../SpotifyLogin";
-import './login.scss';
+import { ButtonLink } from "../../atoms";
 import logoMyMusicApp from '../../../img/MyMusicApp.png'
+import './login.scss';
 
 export const Login = () => {
   

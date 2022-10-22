@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getPlaylists } from "../../../store/slices/playlists/thunks";
-import { Spinner } from "../../atoms/spinner/Spinner";
-import { DescriptionsList } from "../../molecules/descriptionsList/DescriptionsList";
-import { IconsPlaylist } from "../../molecules/iconsPlaylist/iconsPlaylist";
-import { SongRow } from "../../molecules/songRow/SongRow";
+import { getPlaylists } from "../../../store/slices";
+import { Spinner } from "../../atoms";
+import { DescriptionsList, IconsPlaylist, SongRow } from "../../molecules";
 import './playlist.scss';
 
 export const Playlist = () => {
