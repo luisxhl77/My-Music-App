@@ -1,7 +1,8 @@
-import { PlayCircleFilled } from "@mui/icons-material"
-import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { PlayCircleFilled } from '@mui/icons-material';
+import iconSpotify from '../../../img/iconSpotify.jpg';
 import './card.scss';
-import iconSpotify from '../../../img/iconSpotify.jpg'
 
 export const Card = ({ name, description, image, type, id }) => {
 
@@ -10,7 +11,7 @@ export const Card = ({ name, description, image, type, id }) => {
             <Link to={ `/playlist/${id}` } className="card__textLink"> 
                 <div className="card__play-music">
                     <div className="card__image">
-                        <img src={ ( image ) ? image : iconSpotify } alt="cover" className="card__img" id="disk1"/>
+                        <img src={ image } alt="cover" className="card__img" id="disk1"/>
                     </div>
                     <PlayCircleFilled fontSize="large" className="btnPlay"/>
                 </div>   
@@ -20,4 +21,19 @@ export const Card = ({ name, description, image, type, id }) => {
             </Link>
         </div>
     )
+}
+
+Card.propTypes = {
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    type: PropTypes.string,
+    id: PropTypes.string.isRequired,
+}
+
+Card.defaultProps = {
+    name: 'no title',
+    description: 'No description',
+    image: iconSpotify,
+    type: 'no type',
 }

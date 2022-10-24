@@ -27,10 +27,10 @@ export const Playlist = () => {
 
       <DescriptionsList 
         name      = { playlist?.name } 
-        images    = { playlist?.images[0]?.url } 
-        owner     = { playlist?.owner?.display_name } 
-        followers = { playlist?.followers?.total } 
         tracks    = { playlist?.tracks?.total }
+        images    = { playlist?.images[0]?.url } 
+        followers = { playlist?.followers?.total } 
+        owner     = { playlist?.owner?.display_name }
       />
 
       <section className="playlist__songs">
@@ -39,8 +39,11 @@ export const Playlist = () => {
           {
             playlist?.tracks?.items.map(( item ) => (
               <SongRow 
-                track = { item?.track } 
-                key   = { item?.track?.id }
+                id     = { item?.track?.id }
+                key    = { item?.track?.id }
+                name   = { item?.track?.name }
+                image  = { item?.track?.album?.images[0]?.url }
+                artist = { item?.track?.artists.map(artist => artist.name).join(', ') } 
               />
             ))
           }

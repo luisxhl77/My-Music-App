@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
+import PropTypes from 'prop-types';
 import "./sidebarChoise.scss";
 
-export const SiderbarChoice = ({title, Icon, nav}) => {
+export const SiderbarChoice = ({ title, Icon, nav }) => {
+
     return (
         <li>
             <NavLink to={nav} className={ ({ isActive }) => `choiceOptions ${ isActive ? 'activeLink' : ''} `}>
@@ -10,4 +12,10 @@ export const SiderbarChoice = ({title, Icon, nav}) => {
             </NavLink>
         </li>
     )
+
 };
+
+SiderbarChoice.propTypes = {
+    title: PropTypes.string.isRequired, 
+    nav: PropTypes.string.isRequired
+}

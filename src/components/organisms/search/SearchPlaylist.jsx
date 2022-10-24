@@ -58,12 +58,12 @@ export const SearchPlaylist = () => {
         {
           searchPlaylist?.map(( item ) => (
             <Card 
-              name        = { item?.name } 
-              image       = { item?.images[0]?.url } 
-              description = { item?.description } 
-              type        = { item?.type } 
               id          = { item?.id } 
               key         = { item?.id } 
+              name        = { item?.name } 
+              type        = { item?.type } 
+              description = { item?.description } 
+              image       = { item?.images[0]?.url } 
             />
           ))
         }

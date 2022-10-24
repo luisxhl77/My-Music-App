@@ -1,5 +1,5 @@
-import { Avatar } from "@mui/material";
 import { useSelector } from "react-redux";
+import { Avatar } from "@mui/material";
 import './profile.scss';
 
 export const Profile = () => {

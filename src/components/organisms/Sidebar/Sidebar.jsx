@@ -14,10 +14,22 @@ export const Sidebar = () => {
         </figure>
       </Link>
       <ul>
-        <SiderbarChoice title="Home" Icon={ Home } nav="/home" />
-        <SiderbarChoice title="search" Icon={ Search } nav="/search" />
+        <SiderbarChoice 
+          title="Home" 
+          Icon={ Home } 
+          nav="/home" 
+        />
+        <SiderbarChoice 
+          title="search" 
+          Icon={ Search } 
+          nav="/search" 
+        />
         <hr className="nav__line"/>
-        <SiderbarChoice title="I like you" Icon={ Favorite } nav="/collectionTrack" />
+        <SiderbarChoice 
+          title="I like you" 
+          Icon={ Favorite } 
+          nav="/collectionTrack" 
+        />
       </ul>
     </nav>
   )

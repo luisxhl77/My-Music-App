@@ -4,6 +4,7 @@ import { Spinner } from "../../atoms";
 import './mySavedTrack.scss';
 
 export const MySavedTrack = () => {
+  
   const { mySavedTracks } = useSelector( state => state.mySavedTracks );
   const { user } = useSelector( state => state.user );
 
@@ -15,20 +16,30 @@ export const MySavedTrack = () => {
 
   return (
     <main className="mySavedTracks">
-      <DescriptionsList name={"Songs you like"} tracks={ mySavedTracks?.total } owner={ user?.display_name }/>
-      <div className="mySavedTracks__songs">
+
+      <DescriptionsList 
+        name={"Songs you like"} 
+        tracks={ mySavedTracks?.total } 
+        owner={ user?.display_name }
+      />
+
+      <section className="mySavedTracks__songs">
         <IconsPlaylist mySavedTracks={ true }/>
         <div className="mySavedTracks__list-songs">
           {
             mySavedTracks?.items.map(( item ) => (
               <SongRow 
-                track = { item?.track } 
-                key   = { item?.track?.id }
+              id     = { item?.track?.id }
+              key    = { item?.track?.id }
+              name   = { item?.track?.name }
+              image  = { item?.track?.album?.images[0]?.url }
+              artist = { item?.track?.artists.map(artist => artist.name).join(', ') } 
               />
             ))
           }
         </div>
-      </div>
+      </section>
+
     </main>
   )
 }

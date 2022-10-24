@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types';
 import { FavoriteBorder, PlayCircleFilled } from "@mui/icons-material";
+import iconSpotify from '../../../img/iconSpotify.jpg'; 
 import './songRow.scss';
 
-export const SongRow = ({track}) => {
+export const SongRow = ({ id, name, image, artist }) => {
 
     const addFavorites = (idTracks) => {
         console.log(idTracks)
@@ -15,7 +17,7 @@ export const SongRow = ({track}) => {
                 
                     <figure className="songRow__image">
 
-                        <img src={ track?.album?.images[0]?.url } alt="album"/>
+                        <img src={ image } alt="album"/>
                         <span className="songRow__play" >
                             <PlayCircleFilled fontSize="large"/>
                         </span>
@@ -25,13 +27,27 @@ export const SongRow = ({track}) => {
                 </div>
                 <div className="songRow__song-info" >
 
-                    <h4 className="songRow__titleSong"> { track?.name } </h4>
-                    <p className="songRow__description"> { track?.artists.map(artist => artist.name).join(', ') } </p>
+                    <h4 className="songRow__titleSong"> { name } </h4>
+                    <p className="songRow__description"> { artist } </p>
                
                 </div> 
             
             </div>
-            <FavoriteBorder className="songRow__icon-favorite" onClick={()=> addFavorites( track?.id )}/>
+            <FavoriteBorder className="songRow__icon-favorite" onClick={()=> addFavorites( id )}/>
         </div>
     )
+}
+
+SongRow.propTypes = {
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    artist: PropTypes.string,
+}
+
+SongRow.defaultProps = {
+    id: 'no title',
+    name: 'no name',
+    image: iconSpotify,
+    artist: 'no artist',
 }
