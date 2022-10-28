@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas de <ButtonLink/> debe de hacer match con el snapshot 1`] = `
+<div>
+  <a
+    aria-label="buttonLink"
+    class="buttonLink"
+    href="https://login.com/"
+  >
+    iniciar sesion
+  </a>
+</div>
+`;
