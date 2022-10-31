@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { FavoriteBorder, PlayCircleFilled } from "@mui/icons-material";
-import iconSpotify from '../../../img/iconSpotify.jpg'; 
+// import iconSpotify from '../../../img/iconSpotify.jpg'; 
 import './songRow.scss';
 
 export const SongRow = ({ id, name, image, artist }) => {
@@ -17,7 +17,7 @@ export const SongRow = ({ id, name, image, artist }) => {
                 
                     <figure className="songRow__image">
 
-                        <img src={ image } alt="album"/>
+                        <img src={ image } alt={id} aria-label='imageSong'/>
                         <span className="songRow__play" >
                             <PlayCircleFilled fontSize="large"/>
                         </span>
@@ -27,8 +27,8 @@ export const SongRow = ({ id, name, image, artist }) => {
                 </div>
                 <div className="songRow__song-info" >
 
-                    <h4 className="songRow__titleSong"> { name } </h4>
-                    <p className="songRow__description"> { artist } </p>
+                    <h4 className="songRow__titleSong" aria-label='titleSong'> { name } </h4>
+                    <p className="songRow__description" aria-label='artisSong'> { artist } </p>
                
                 </div> 
             
@@ -48,6 +48,6 @@ SongRow.propTypes = {
 SongRow.defaultProps = {
     id: 'no title',
     name: 'no name',
-    image: iconSpotify,
+    image: '../../../img/iconSpotify.jpg',
     artist: 'no artist',
 }

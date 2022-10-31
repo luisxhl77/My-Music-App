@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas de <Card/> debe de hacer match con el snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <a
+      class="card__textLink"
+      href="/playlist/ID_2174123"
+    >
+      <div
+        class="card__play-music"
+      >
+        <div
+          class="card__image"
+        >
+          <img
+            alt="cover"
+            aria-label="imageCard"
+            class="card__img"
+            id="disk1"
+            src="https://avicii.com/avicii.jsg"
+          />
+        </div>
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge btnPlay css-tzssek-MuiSvgIcon-root"
+          data-testid="PlayCircleFilledIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"
+          />
+        </svg>
+      </div>
+      <h5
+        aria-label="nameCard"
+        class="card__name-playlist"
+      >
+        This is Avicii
+      </h5>
+      <p
+        aria-label="descriptionCard"
+        class="card__description-playlist"
+      >
+        Avicii
+      </p>
+      <p
+        aria-label="typeCard"
+        class="card__description-playlist"
+      >
+        Playlist
+      </p>
+    </a>
+  </div>
+</div>
+`;

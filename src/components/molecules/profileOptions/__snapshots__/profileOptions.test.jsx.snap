@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Prueba de <ProfileOptions/> debe de hacer match con el snapshot 1`] = `
+<div>
+  <div
+    class="profileOptions"
+  >
+    <a
+      class="profileOptions  "
+      href="/Profile"
+    >
+      <div
+        aria-label="imageUser"
+        class="MuiAvatar-root MuiAvatar-circular css-1wlk0hk-MuiAvatar-root"
+      >
+        <img
+          alt="asdasffeq"
+          class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+          src="https://avicii.com/avicii.jsg"
+        />
+      </div>
+      <h4
+        aria-label="nameUser"
+        class="profileOptions__name"
+      >
+         
+        Lucho Lopez
+         
+      </h4>
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        data-testid="ArrowDropDownIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m7 10 5 5 5-5z"
+        />
+      </svg>
+    </a>
+    <div
+      class="profileOptions__options"
+    >
+      <a
+        class="profileOptions__option  "
+        href="/Profile"
+      >
+        <p>
+           profile 
+        </p>
+      </a>
+      <p
+        aria-label="funtionOnLogout"
+        class="profileOptions__option"
+      >
+         onlogout 
+      </p>
+    </div>
+  </div>
+</div>
+`;

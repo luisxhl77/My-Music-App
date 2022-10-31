@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas de <SiderbarChoise/>  debe de hacer match con el snapshot 1`] = `
+<div>
+  <li>
+    <a
+      aria-current="page"
+      class="choiceOptions activeLink "
+      href="/"
+    >
+      <h5
+        aria-label="title5"
+        class="choiceOptions__title"
+      />
+    </a>
+  </li>
+</div>
+`;

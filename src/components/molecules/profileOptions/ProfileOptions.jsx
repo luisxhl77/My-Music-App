@@ -20,8 +20,8 @@ export const ProfileOptions = ({ name, image, id }) => {
 
       <NavLink to="/Profile" className={ ({ isActive }) => `profileOptions ${ isActive ? 'profileOptionsActive' : ''} `}>
         
-        <Avatar src={ image } alt={ id }/>
-        <h4 className="profileOptions__name"> { name } </h4>
+        <Avatar src={ image } alt={ id } aria-label="imageUser"/>
+        <h4 className="profileOptions__name" aria-label="nameUser"> { name } </h4>
         <ArrowDropDown/>
       
       </NavLink>
@@ -32,7 +32,7 @@ export const ProfileOptions = ({ name, image, id }) => {
           <p> profile </p>
         </NavLink>
         
-        <p className="profileOptions__option" onClick={onLogout} > onlogout </p>
+        <p className="profileOptions__option" onClick={onLogout} aria-label='funtionOnLogout'> onlogout </p>
       </div> 
 
     </div>

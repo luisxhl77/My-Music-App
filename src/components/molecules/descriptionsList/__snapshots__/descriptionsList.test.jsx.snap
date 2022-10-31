@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas de <DescriptionList/> Debe de hacer match con el snapshot 1`] = `
+<div>
+  <section
+    class="DescriptionsList"
+  >
+    <figure
+      class="DescriptionsList__image"
+    >
+      <img
+        alt="coverList"
+        aria-label="imageDescription"
+        class="DescriptionsList__img"
+        src="https://avicii.com/avicii.jsg"
+      />
+    </figure>
+    <article
+      class="DescriptionsList__infoText"
+    >
+      <h5>
+         LIST 
+      </h5>
+      <p
+        aria-label="nameList"
+        class="DescriptionsList__name-list"
+      >
+        Wake Me Up
+      </p>
+      <ul
+        class="DescriptionsList__descrip-list"
+      >
+        <li
+          aria-label="ownerList"
+          class="DescriptionsList__owner"
+        >
+          Avicii
+        </li>
+        <li
+          aria-label="followersList"
+          class="DescriptionsList__list"
+        >
+          180
+          <p>
+             " I like it " 
+          </p>
+        </li>
+        <li
+          aria-label="tracksList"
+          class="DescriptionsList__list"
+        >
+          10
+          <p>
+             songs 
+          </p>
+        </li>
+      </ul>
+    </article>
+  </section>
+</div>
+`;

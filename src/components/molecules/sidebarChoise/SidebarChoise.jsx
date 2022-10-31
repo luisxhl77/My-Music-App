@@ -8,7 +8,7 @@ export const SiderbarChoice = ({ title, Icon, nav }) => {
         <li>
             <NavLink to={nav} className={ ({ isActive }) => `choiceOptions ${ isActive ? 'activeLink' : ''} `}>
                 { Icon && <Icon/> }
-                { Icon ? <h4>{ title }</h4> : <h5 className="choiceOptions__title">{ title }</h5> }
+                { Icon ? <h4 aria-label="title4">{ title }</h4> : <h5 aria-label="title5" className="choiceOptions__title">{ title }</h5> }
             </NavLink>
         </li>
     )
