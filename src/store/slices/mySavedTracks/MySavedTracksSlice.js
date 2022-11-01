@@ -8,9 +8,8 @@ export const mySavedTracksSlice = createSlice({
     reducers: {
         setMySavedTracks: (state, action) => {
             state.mySavedTracks = action.payload.mySavedTracks;
-            state.loaded = false;
         }
     }
 });
 
-export const { setMySavedTracks, startLoadingTracks } = mySavedTracksSlice.actions;
+export const { setMySavedTracks } = mySavedTracksSlice.actions;

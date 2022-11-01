@@ -10,3 +10,13 @@ export const getMySavedTrack = () => {
         dispatch(setMySavedTracks({mySavedTracks: data}));
     }
 }
+
+export const addInMySavedTracks = (id) => {
+    return async( dispatch ) => {
+
+        console.log(id)
+        await dispatch( spotify.addToMySavedTracks(id) );
+        const data = await spotify.getMySavedTracks();
+        dispatch(setMySavedTracks({mySavedTracks: data}));
+    }
+}

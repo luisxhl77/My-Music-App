@@ -1,22 +1,18 @@
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import SpotifyWebApi from 'spotify-web-api-js';
-import { setAccessTokenUser } from '../../../store/slices';
+import { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { addInMySavedTracks, setAccessTokenUser } from '../../../store/slices';
 import { FavoriteBorder, PlayCircleFilled } from "@mui/icons-material";
 import './songRow.scss';
-
-const spotify = new SpotifyWebApi();
 
 export const SongRow = ({ id, name, image, artist }) => {
 
     const dispatch = useDispatch();
 
-    const addFavorites = (id) => {
-        setTimeout(() => {
-            dispatch( setAccessTokenUser(window.localStorage.getItem("token")) );
-            dispatch(spotify.addToMySavedTracks(id));
-        },1000)
-    }
+    useEffect(() => {
+        dispatch( setAccessTokenUser(window.localStorage.getItem("token")) );
+        dispatch( addInMySavedTracks( id ) ); 
+    }, [])
 
     return (
         <div className="songRow">
@@ -42,7 +38,7 @@ export const SongRow = ({ id, name, image, artist }) => {
                 </div> 
             
             </div>
-            <FavoriteBorder className="songRow__icon-favorite" onClick={()=> addFavorites( id )}/>
+            <FavoriteBorder className="songRow__icon-favorite" onClick={ () => dispatch( addInMySavedTracks( id ) ) }/>
         </div>
     )
 }
