@@ -1,12 +1,21 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import SpotifyWebApi from 'spotify-web-api-js';
+import { setAccessTokenUser } from '../../../store/slices';
 import { FavoriteBorder, PlayCircleFilled } from "@mui/icons-material";
-// import iconSpotify from '../../../img/iconSpotify.jpg'; 
 import './songRow.scss';
+
+const spotify = new SpotifyWebApi();
 
 export const SongRow = ({ id, name, image, artist }) => {
 
-    const addFavorites = (idTracks) => {
-        console.log(idTracks)
+    const dispatch = useDispatch();
+
+    const addFavorites = (id) => {
+        setTimeout(() => {
+            dispatch( setAccessTokenUser(window.localStorage.getItem("token")) );
+            dispatch(spotify.addToMySavedTracks(id));
+        },1000)
     }
 
     return (

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-// import imageFavorite from '../../../img/favorite.png';
 import './descriptionsList.scss';
 
 export const DescriptionsList = ({ name, images, owner, followers, tracks }) => {
@@ -16,8 +15,10 @@ export const DescriptionsList = ({ name, images, owner, followers, tracks }) => 
                 </p>
                 <ul className="DescriptionsList__descrip-list">
                     <li className="DescriptionsList__owner" aria-label='ownerList' >{ owner }</li>
-                    <li className="DescriptionsList__list"  aria-label='followersList' >{ followers }<p> " I like it " </p></li>
-                    <li className="DescriptionsList__list"  aria-label='tracksList' >{ tracks }<p> songs </p></li>
+                    <li className="DescriptionsList__list"  aria-label='followersList' >{ followers }</li>
+                    <li className="DescriptionsList__list">" I like it "</li>
+                    <li className="DescriptionsList__list"  aria-label='tracksList' >{ tracks }</li>
+                    <li className="DescriptionsList__list">songs</li>
                 </ul>
             </article>
         </section>
@@ -35,7 +36,7 @@ DescriptionsList.propTypes = {
 
 DescriptionsList.defaultProps = {
     name: 'no title',
-    images: '../../../img/favorite.png',
+    images: 'no image',
     owner: 'no owner',
     followers: 0,
     tracks: 0,

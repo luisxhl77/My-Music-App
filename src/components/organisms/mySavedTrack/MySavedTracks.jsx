@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { DescriptionsList, IconsPlaylist, SongRow } from "../../molecules";
+import imageFavorite from '../../../img/favorite.png';
 import { Spinner } from "../../atoms";
 import './mySavedTrack.scss';
 
@@ -21,6 +22,7 @@ export const MySavedTrack = () => {
         name={"Songs you like"} 
         tracks={ mySavedTracks?.total } 
         owner={ user?.display_name }
+        images={ imageFavorite }
       />
 
       <section className="mySavedTracks__songs">
