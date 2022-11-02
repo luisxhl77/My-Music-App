@@ -1,6 +1,6 @@
 const endpoint = 'https://accounts.spotify.com/authorize';
-const client_id = '4214432a3f4f407aa2e3667676cb1edc';
-const redirect_uri = 'http://127.0.0.1:5173/';
+const client_id = '324ab4041a994202b2ad2040c06b1635';
+const redirect_uri = 'http://localhost:5173/';
 const scope = [
   //Spotify Connect
   "user-read-playback-state",

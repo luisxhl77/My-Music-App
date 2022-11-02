@@ -1,18 +1,21 @@
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { addInMySavedTracks, setAccessTokenUser } from '../../../store/slices';
-import { FavoriteBorder, PlayCircleFilled } from "@mui/icons-material";
+import { addInMySavedTracks, removeInMySavedTracks } from '../../../store/slices';
+import { FavoriteBorder, PlayCircleFilled, Favorite } from "@mui/icons-material";
 import './songRow.scss';
 
 export const SongRow = ({ id, name, image, artist }) => {
 
+    const collectionTrack = window.location.pathname;
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch( setAccessTokenUser(window.localStorage.getItem("token")) );
-        dispatch( addInMySavedTracks( id ) ); 
-    }, [])
+    const addTrackInFavorites = () => {
+        dispatch( addInMySavedTracks( id ) );
+    }
+
+    const removeTrackInFavorites = () => {
+        dispatch( removeInMySavedTracks( id ) );
+    }
 
     return (
         <div className="songRow">
@@ -38,7 +41,11 @@ export const SongRow = ({ id, name, image, artist }) => {
                 </div> 
             
             </div>
-            <FavoriteBorder className="songRow__icon-favorite" onClick={ () => dispatch( addInMySavedTracks( id ) ) }/>
+            { ( collectionTrack === '/collectionTrack' ) ?
+                <Favorite className="songRow__icon-favorite" onClick={ () => removeTrackInFavorites( id )}/>
+                :
+                <FavoriteBorder className="songRow__icon-Borderfavorite" onClick={ () => addTrackInFavorites( id ) }/>
+            }
         </div>
     )
 }

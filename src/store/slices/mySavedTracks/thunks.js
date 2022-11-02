@@ -13,9 +13,24 @@ export const getMySavedTrack = () => {
 
 export const addInMySavedTracks = (id) => {
     return async( dispatch ) => {
+        
+        const idMyTrack = await [id];
 
-        console.log(id)
-        await dispatch( spotify.addToMySavedTracks(id) );
+        await spotify.addToMySavedTracks(idMyTrack);
+
+        const data = await spotify.getMySavedTracks();
+        await dispatch(setMySavedTracks({mySavedTracks: data}));
+        alert("agregado a favoritos")
+    }
+}
+
+export const removeInMySavedTracks = (id) => {
+    return async( dispatch ) => {
+        
+        const idMyTrack = await [id];
+
+        await spotify.removeFromMySavedTracks(idMyTrack);
+
         const data = await spotify.getMySavedTracks();
         dispatch(setMySavedTracks({mySavedTracks: data}));
     }
