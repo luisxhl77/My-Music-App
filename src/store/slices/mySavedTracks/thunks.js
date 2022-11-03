@@ -1,4 +1,5 @@
 import SpotifyWebApi from "spotify-web-api-js";
+import Swal from "sweetalert2";
 import { setMySavedTracks } from "./MySavedTracksSlice";
 
 const spotify = new SpotifyWebApi();
@@ -20,7 +21,15 @@ export const addInMySavedTracks = (id) => {
 
         const data = await spotify.getMySavedTracks();
         await dispatch(setMySavedTracks({mySavedTracks: data}));
-        alert("agregado a favoritos")
+        Swal.fire({
+            position: 'bottom-end',
+            text: 'song added to favorites',
+            showConfirmButton: false,
+            timer: 1500,
+            toast: true,
+            color: 'white',
+            background: '#249433'
+        })
     }
 }
 
@@ -32,6 +41,15 @@ export const removeInMySavedTracks = (id) => {
         await spotify.removeFromMySavedTracks(idMyTrack);
 
         const data = await spotify.getMySavedTracks();
-        dispatch(setMySavedTracks({mySavedTracks: data}));
+        await dispatch(setMySavedTracks({mySavedTracks: data}));
+        Swal.fire({
+            position: 'bottom-end',
+            text: 'song removed from favorites',
+            showConfirmButton: false,
+            timer: 1500,
+            toast: true,
+            color: 'white',
+            background: '#249433'
+        })
     }
 }

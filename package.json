@@ -27,6 +27,7 @@
     "sass": "^1.54.9",
     "spotify-web-api-js": "^1.5.2",
     "styled-components": "^5.3.5",
+    "sweetalert2": "^11.6.5",
     "whatwg-fetch": "^3.6.2"
   },
   "devDependencies": {

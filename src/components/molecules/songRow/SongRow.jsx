@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addInMySavedTracks, removeInMySavedTracks } from '../../../store/slices';
 import { FavoriteBorder, PlayCircleFilled, Favorite } from "@mui/icons-material";
+import SpotifyWebApi from 'spotify-web-api-js';
 import './songRow.scss';
+
+const spotify = new SpotifyWebApi()
 
 export const SongRow = ({ id, name, image, artist }) => {
 
@@ -16,6 +20,29 @@ export const SongRow = ({ id, name, image, artist }) => {
     const removeTrackInFavorites = () => {
         dispatch( removeInMySavedTracks( id ) );
     }
+    
+
+    const datos = (idTrack) => {
+        return new Promise( (resolve, reject) => {
+
+            setTimeout(() => {
+
+                const resp = spotify.containsMySavedTracks([idTrack])
+                if (resp) {
+                    resolve( resp )
+                }else{
+                    reject( ' no se pudo realizar la solicitud con exito')
+                }
+
+            }, 1000)
+        })
+        .then( () => {
+
+        })
+        .catch( err => console.warn( err ) );
+    }
+
+    datos(id);
 
     return (
         <div className="songRow">
@@ -41,7 +68,9 @@ export const SongRow = ({ id, name, image, artist }) => {
                 </div> 
             
             </div>
-            { ( collectionTrack === '/collectionTrack' ) ?
+            { 
+            
+            ( collectionTrack === '/collectionTrack' ) ?
                 <Favorite className="songRow__icon-favorite" onClick={ () => removeTrackInFavorites( id )}/>
                 :
                 <FavoriteBorder className="songRow__icon-Borderfavorite" onClick={ () => addTrackInFavorites( id ) }/>
