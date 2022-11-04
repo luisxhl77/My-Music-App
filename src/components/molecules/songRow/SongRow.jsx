@@ -1,48 +1,34 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addInMySavedTracks, removeInMySavedTracks } from '../../../store/slices';
+import { addInMySavedTracks, removeInMySavedTracks, stateMySavedTracks } from '../../../store/slices';
 import { FavoriteBorder, PlayCircleFilled, Favorite } from "@mui/icons-material";
-import SpotifyWebApi from 'spotify-web-api-js';
 import './songRow.scss';
+import { Spinner } from '../../atoms/spinner/Spinner';
 
-const spotify = new SpotifyWebApi()
 
 export const SongRow = ({ id, name, image, artist }) => {
+    // const { stateTracks } = useSelector( state => state.mySavedTracks );
+    
+    const [state, setState ] = useState(false);
 
-    const collectionTrack = window.location.pathname;
+
     const dispatch = useDispatch();
 
-    const addTrackInFavorites = () => {
+    const addTrackInFavorites = ( id ) => {
         dispatch( addInMySavedTracks( id ) );
+        setState( () => true)
+        console.log(id)
     }
 
-    const removeTrackInFavorites = () => {
+    const removeTrackInFavorites = ( id ) => {
         dispatch( removeInMySavedTracks( id ) );
+        setState( () => false)
     }
     
-
-    const datos = (idTrack) => {
-        return new Promise( (resolve, reject) => {
-
-            setTimeout(() => {
-
-                const resp = spotify.containsMySavedTracks([idTrack])
-                if (resp) {
-                    resolve( resp )
-                }else{
-                    reject( ' no se pudo realizar la solicitud con exito')
-                }
-
-            }, 1000)
-        })
-        .then( () => {
-
-        })
-        .catch( err => console.warn( err ) );
-    }
-
-    datos(id);
+    // useEffect(()=>{
+    //     dispatch( stateMySavedTracks(id))
+    // },[])
 
     return (
         <div className="songRow">
@@ -70,10 +56,10 @@ export const SongRow = ({ id, name, image, artist }) => {
             </div>
             { 
             
-            ( collectionTrack === '/collectionTrack' ) ?
-                <Favorite className="songRow__icon-favorite" onClick={ () => removeTrackInFavorites( id )}/>
-                :
-                <FavoriteBorder className="songRow__icon-Borderfavorite" onClick={ () => addTrackInFavorites( id ) }/>
+            (state) ?
+            <Favorite className="songRow__icon-favorite" onClick={ () => removeTrackInFavorites( id )}/>
+            :
+            <FavoriteBorder className="songRow__icon-Borderfavorite" onClick={ () => addTrackInFavorites( id ) }/>
             }
         </div>
     )
