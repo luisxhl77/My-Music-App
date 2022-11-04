@@ -1,7 +1,7 @@
 
 import SpotifyWebApi from "spotify-web-api-js";
 import Swal from "sweetalert2";
-import { getStateTracks, setMySavedTracks } from "./MySavedTracksSlice";
+import { setMySavedTracks } from "./MySavedTracksSlice";
 
 const spotify = new SpotifyWebApi();
 
@@ -10,6 +10,7 @@ export const getMySavedTrack = () => {
         
         const data = await spotify.getMySavedTracks();
         dispatch(setMySavedTracks({mySavedTracks: data}));
+
     }
 }
 
@@ -53,16 +54,4 @@ export const removeInMySavedTracks = (id) => {
             background: '#249433'
         })
     }
-}
-
-export const stateMySavedTracks = (id) => {
-
-    return async( dispatch ) => {
-        
-        const idMyTrack = await [id];
-        const data = await spotify.containsMySavedTracks(idMyTrack);
-        dispatch(getStateTracks({stateTracks: data[0]}));
-
-    }
-
 }

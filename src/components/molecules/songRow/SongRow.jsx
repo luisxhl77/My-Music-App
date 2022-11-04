@@ -1,17 +1,13 @@
-import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addInMySavedTracks, removeInMySavedTracks, stateMySavedTracks } from '../../../store/slices';
+import { addInMySavedTracks, removeInMySavedTracks } from '../../../store/slices';
 import { FavoriteBorder, PlayCircleFilled, Favorite } from "@mui/icons-material";
 import './songRow.scss';
-import { Spinner } from '../../atoms/spinner/Spinner';
-
 
 export const SongRow = ({ id, name, image, artist }) => {
-    // const { stateTracks } = useSelector( state => state.mySavedTracks );
-    
-    const [state, setState ] = useState(false);
+    const { mySavedTracks } = useSelector( state => state.mySavedTracks );
 
+    const isSavedTrack = mySavedTracks.items.map( ({track}) =>  track.id ).includes(id);
 
     const dispatch = useDispatch();
 
@@ -25,10 +21,6 @@ export const SongRow = ({ id, name, image, artist }) => {
         dispatch( removeInMySavedTracks( id ) );
         setState( () => false)
     }
-    
-    // useEffect(()=>{
-    //     dispatch( stateMySavedTracks(id))
-    // },[])
 
     return (
         <div className="songRow">
@@ -56,7 +48,7 @@ export const SongRow = ({ id, name, image, artist }) => {
             </div>
             { 
             
-            (state) ?
+            (isSavedTrack) ?
             <Favorite className="songRow__icon-favorite" onClick={ () => removeTrackInFavorites( id )}/>
             :
             <FavoriteBorder className="songRow__icon-Borderfavorite" onClick={ () => addTrackInFavorites( id ) }/>
